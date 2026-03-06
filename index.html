@@ -5,404 +5,419 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Automation Architect | Duxbury, MA | South Shore</title>
 <meta name="description" content="Custom AI-powered automations for South Shore businesses. CRM, reviews, lead follow-up, and retention — built by a Duxbury local who knows your market.">
-<meta property="og:title" content="AI Automation for South Shore Businesses">
-<meta property="og:description" content="I build the systems that run your business while you sleep. Based in Duxbury, serving the South Shore and greater Boston.">
-<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #FDFBF7;
-  --bg-warm: #F5F0E8;
-  --bg-card: #FFFFFF;
-  --bg-navy: #1B2D4F;
-  --bg-navy-light: #243B5E;
-  --text: #2C3E50;
-  --text-light: #5D6D7E;
-  --text-dark: #1A2332;
-  --heading: #1B2D4F;
-  --accent: #C05746;
-  --accent-hover: #A84636;
-  --accent-subtle: rgba(192,87,70,0.08);
-  --sage: #5B7B6A;
-  --sage-subtle: rgba(91,123,106,0.1);
-  --sage-light: #E8F0EB;
-  --border: #E2DCD2;
-  --border-light: #EDE8E0;
-  --max-w: 1080px;
-  --serif: 'DM Serif Display', Georgia, serif;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg: #0A0A0F;
+  --bg-card: rgba(255,255,255,0.04);
+  --bg-card-hover: rgba(255,255,255,0.07);
+  --text: #E8E4DD;
+  --text-dim: #8A8680;
+  --text-bright: #FFFFFF;
+  --accent: #FF6B35;
+  --accent-glow: rgba(255,107,53,0.3);
+  --accent2: #7B61FF;
+  --accent2-glow: rgba(123,97,255,0.2);
+  --accent3: #00D4AA;
+  --accent3-glow: rgba(0,212,170,0.15);
+  --gradient-hero: linear-gradient(135deg, #FF6B35 0%, #FF3CAC 50%, #7B61FF 100%);
+  --gradient-warm: linear-gradient(135deg, #FF6B35 0%, #FFAF36 100%);
+  --gradient-cool: linear-gradient(135deg, #7B61FF 0%, #00D4AA 100%);
+  --border: rgba(255,255,255,0.08);
+  --max-w: 1200px;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Space Grotesk', -apple-system, sans-serif;
 }
 
 html { scroll-behavior: smooth; text-wrap: pretty; }
 body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.7;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
+  font-family: var(--sans); background: var(--bg); color: var(--text);
+  line-height: 1.7; font-size: 16px; overflow-x: hidden;
 }
 a { color: var(--accent); text-decoration: none; }
-a:hover { color: var(--accent-hover); }
-img { max-width: 100%; }
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
 
-.container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+/* GRAIN OVERLAY */
+body::before {
+  content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 9999;
+}
 
 /* NAV */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(253,251,247,0.92); backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border-light);
+  background: rgba(10,10,15,0.85); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
 }
 .nav-inner {
-  max-width: var(--max-w); margin: 0 auto; padding: 16px 24px;
+  max-width: var(--max-w); margin: 0 auto; padding: 18px 32px;
   display: flex; justify-content: space-between; align-items: center;
 }
 .nav-brand {
-  font-family: var(--serif); font-size: 20px; color: var(--heading);
-  letter-spacing: -0.3px;
+  font-family: var(--serif); font-size: 22px; color: var(--text-bright);
+  font-weight: 700; letter-spacing: -0.5px;
 }
-.nav-links { display: flex; gap: 28px; align-items: center; }
-.nav-links a {
-  color: var(--text-light); font-size: 14px; font-weight: 500;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--text-dark); }
+.nav-brand span { background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { color: var(--text-dim); font-size: 14px; font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover { color: var(--text-bright); }
 .nav-cta {
-  background: var(--accent) !important; color: #fff !important;
-  padding: 10px 22px; border-radius: 8px; font-size: 14px; font-weight: 600;
-  transition: background 0.2s;
+  background: var(--gradient-hero) !important; color: #fff !important;
+  padding: 10px 24px; border-radius: 100px; font-size: 14px; font-weight: 600;
+  transition: transform 0.2s, box-shadow 0.2s;
 }
-.nav-cta:hover { background: var(--accent-hover) !important; }
+.nav-cta:hover { transform: translateY(-1px); box-shadow: 0 8px 30px var(--accent-glow); }
 .mobile-menu {
   display: none; cursor: pointer; color: var(--text); font-size: 24px;
   background: none; border: none; font-family: var(--sans);
 }
 
 /* HERO */
-.hero { padding: 140px 0 80px; }
-.hero-inner {
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center;
+.hero {
+  min-height: 100vh; display: flex; align-items: center;
+  position: relative; padding: 120px 0 80px;
 }
-.hero-local {
+.hero-bg-art {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  overflow: hidden; pointer-events: none;
+}
+.hero-bg-art .blob1 {
+  position: absolute; top: -20%; right: -10%; width: 800px; height: 800px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  border-radius: 50%; filter: blur(80px); animation: float1 20s ease-in-out infinite;
+}
+.hero-bg-art .blob2 {
+  position: absolute; bottom: -30%; left: -15%; width: 600px; height: 600px;
+  background: radial-gradient(circle, var(--accent2-glow) 0%, transparent 70%);
+  border-radius: 50%; filter: blur(80px); animation: float2 25s ease-in-out infinite;
+}
+.hero-bg-art .blob3 {
+  position: absolute; top: 40%; left: 50%; width: 400px; height: 400px;
+  background: radial-gradient(circle, var(--accent3-glow) 0%, transparent 70%);
+  border-radius: 50%; filter: blur(60px); animation: float3 18s ease-in-out infinite;
+}
+@keyframes float1 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-40px,60px) scale(1.1); } }
+@keyframes float2 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(50px,-40px) scale(1.15); } }
+@keyframes float3 { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-30px,-50px) scale(0.9); } }
+
+.hero-content { position: relative; z-index: 2; text-align: center; max-width: 900px; margin: 0 auto; }
+.hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
-  color: var(--sage); font-size: 14px; font-weight: 600;
-  margin-bottom: 20px; letter-spacing: 0.3px;
+  background: rgba(255,255,255,0.06); border: 1px solid var(--border);
+  padding: 8px 20px; border-radius: 100px; font-size: 13px; color: var(--text-dim);
+  margin-bottom: 40px; font-weight: 500;
 }
-.hero-local-dot {
-  width: 8px; height: 8px; background: var(--sage); border-radius: 50%;
-  display: inline-block;
-}
+.hero-badge .dot { width: 8px; height: 8px; background: var(--accent3); border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
 .hero h1 {
-  font-family: var(--serif); font-size: clamp(36px, 4.5vw, 52px);
-  font-weight: 400; line-height: 1.15; color: var(--heading);
-  margin-bottom: 20px; letter-spacing: -0.5px;
+  font-family: var(--serif); font-size: clamp(48px, 7vw, 88px);
+  font-weight: 700; line-height: 1.05; color: var(--text-bright);
+  margin-bottom: 28px; letter-spacing: -2px;
 }
-.hero p {
-  font-size: 17px; color: var(--text-light); max-width: 520px;
-  line-height: 1.75; margin-bottom: 32px;
+.hero h1 .gradient-text {
+  background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.btn-primary {
-  display: inline-block; background: var(--accent); color: #fff;
-  padding: 16px 32px; border-radius: 8px; font-size: 15px; font-weight: 600;
-  transition: all 0.2s; border: none; cursor: pointer; font-family: var(--sans);
-}
-.btn-primary:hover { background: var(--accent-hover); color: #fff; transform: translateY(-1px); }
 .hero-sub {
-  font-size: 13px; color: var(--text-light); margin-top: 12px;
-}
-.hero-right {
-  background: var(--bg-navy); border-radius: 16px; padding: 40px;
-  color: #fff;
-}
-.hero-right h3 {
-  font-family: var(--serif); font-size: 22px; font-weight: 400;
-  margin-bottom: 24px; color: #fff; max-width: 100%;
-}
-.hero-stat-row {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;
-}
-.hero-stat {
-  text-align: center;
-  padding: 20px 12px; background: rgba(255,255,255,0.06);
-  border-radius: 10px;
-}
-.hero-stat-num {
-  font-size: 28px; font-weight: 700; color: #fff; line-height: 1;
-  margin-bottom: 4px;
-}
-.hero-stat-label { font-size: 12px; color: rgba(255,255,255,0.6); }
-.hero-right p {
-  font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7;
-  margin-top: 16px;
-}
-
-/* SECTIONS */
-section { padding: 80px 0; }
-.section-label {
-  display: inline-flex; align-items: center; gap: 8px;
-  color: var(--sage); font-size: 13px; font-weight: 600;
-  letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 14px;
-}
-.section-title {
-  font-family: var(--serif); font-size: clamp(28px, 3.5vw, 40px);
-  font-weight: 400; line-height: 1.2; margin-bottom: 14px;
-  color: var(--heading); letter-spacing: -0.3px;
-}
-.section-subtitle {
-  font-size: 16px; color: var(--text-light); max-width: 560px; line-height: 1.75;
-}
-
-/* PROBLEM */
-.problem-section { background: var(--bg-warm); }
-.problem-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 16px; margin-top: 48px;
-}
-.problem-card {
-  background: var(--bg-card); border: 1px solid var(--border-light);
-  border-radius: 12px; padding: 28px; text-align: center;
-}
-.problem-stat {
-  font-family: var(--serif); font-size: 40px; color: var(--accent);
-  margin-bottom: 8px; line-height: 1;
-}
-.problem-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
-
-/* ABOUT */
-.about-section { border-top: 1px solid var(--border-light); }
-.about-content {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
-  align-items: start; margin-top: 48px;
-}
-.about-text p { color: var(--text-light); margin-bottom: 16px; font-size: 16px; line-height: 1.8; }
-.about-local-callout {
-  background: var(--sage-light); border-left: 3px solid var(--sage);
-  padding: 20px 24px; border-radius: 0 10px 10px 0; margin-top: 24px;
-}
-.about-local-callout p {
-  color: var(--sage); font-size: 15px; font-weight: 500; margin: 0;
+  font-size: 20px; color: var(--text-dim); max-width: 600px; margin: 0 auto 48px;
   line-height: 1.6;
 }
-.about-traits { list-style: none; margin-top: 0; }
+.hero-cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-big {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 36px; border-radius: 100px; font-size: 16px; font-weight: 600;
+  transition: all 0.3s; border: none; cursor: pointer; font-family: var(--sans);
+}
+.btn-primary-big {
+  background: var(--gradient-hero); color: #fff;
+  box-shadow: 0 4px 30px var(--accent-glow);
+}
+.btn-primary-big:hover { transform: translateY(-2px); box-shadow: 0 8px 40px var(--accent-glow); color: #fff; }
+.btn-ghost {
+  background: transparent; color: var(--text); border: 1px solid var(--border);
+}
+.btn-ghost:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); }
+
+/* STAT MARQUEE */
+.marquee-section { padding: 60px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
+.marquee-track {
+  display: flex; gap: 80px; animation: marquee 30s linear infinite; width: max-content;
+}
+.marquee-item { display: flex; align-items: center; gap: 16px; white-space: nowrap; }
+.marquee-num {
+  font-family: var(--serif); font-size: 48px; font-weight: 700;
+  background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.marquee-label { font-size: 14px; color: var(--text-dim); max-width: 160px; line-height: 1.4; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* SVG ILLUSTRATIONS */
+.illustration-section { padding: 120px 0; position: relative; }
+.illo-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.illo-grid.reverse { direction: rtl; }
+.illo-grid.reverse > * { direction: ltr; }
+.illo-text .section-label {
+  font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 3px;
+  color: var(--accent); margin-bottom: 16px;
+}
+.illo-text h2 {
+  font-family: var(--serif); font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700; line-height: 1.1; color: var(--text-bright);
+  margin-bottom: 20px; letter-spacing: -1px;
+}
+.illo-text p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 16px; }
+.illo-art { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
+.illo-art svg { width: 100%; height: auto; }
+
+/* SERVICE CARDS - BENTO */
+.bento-section { padding: 120px 0; }
+.bento-header { text-align: center; margin-bottom: 64px; }
+.bento-header h2 {
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700; color: var(--text-bright); letter-spacing: -1.5px;
+}
+.bento-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 16px;
+}
+.bento-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 20px; padding: 36px; position: relative; overflow: hidden; transition: all 0.4s;
+}
+.bento-card:hover { background: var(--bg-card-hover); border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
+.bento-card.featured {
+  grid-column: span 2; background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(123,97,255,0.08));
+  border-color: rgba(255,107,53,0.2);
+}
+.bento-icon {
+  width: 56px; height: 56px; border-radius: 16px; display: flex;
+  align-items: center; justify-content: center; margin-bottom: 20px; font-size: 24px;
+}
+.bento-icon.orange { background: rgba(255,107,53,0.12); }
+.bento-icon.purple { background: rgba(123,97,255,0.12); }
+.bento-icon.teal { background: rgba(0,212,170,0.12); }
+.bento-card h3 { font-size: 20px; font-weight: 700; color: var(--text-bright); margin-bottom: 10px; }
+.bento-card p { font-size: 15px; color: var(--text-dim); line-height: 1.7; }
+.bento-tag { display: inline-block; margin-top: 16px; padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; }
+.bento-tag.orange { background: rgba(255,107,53,0.1); color: var(--accent); }
+.bento-tag.purple { background: rgba(123,97,255,0.1); color: var(--accent2); }
+.bento-tag.teal { background: rgba(0,212,170,0.1); color: var(--accent3); }
+
+/* TIMELINE */
+.timeline-section { padding: 120px 0; }
+.timeline-header { text-align: center; margin-bottom: 80px; }
+.timeline-header h2 {
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700; color: var(--text-bright); letter-spacing: -1.5px;
+}
+.timeline { max-width: 700px; margin: 0 auto; position: relative; padding-left: 60px; }
+.timeline::before {
+  content: ''; position: absolute; left: 23px; top: 0; bottom: 0; width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2), var(--accent3));
+}
+.timeline-step { position: relative; margin-bottom: 64px; }
+.timeline-step:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute; left: -48px; top: 4px; width: 14px; height: 14px;
+  border-radius: 50%; border: 3px solid var(--accent); background: var(--bg);
+}
+.timeline-step:nth-child(2) .timeline-dot { border-color: var(--accent2); }
+.timeline-step:nth-child(3) .timeline-dot { border-color: var(--accent3); }
+.timeline-step h3 { font-size: 24px; font-weight: 700; color: var(--text-bright); margin-bottom: 8px; }
+.timeline-step .step-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.timeline-step:nth-child(1) .step-label { color: var(--accent); }
+.timeline-step:nth-child(2) .step-label { color: var(--accent2); }
+.timeline-step:nth-child(3) .step-label { color: var(--accent3); }
+.timeline-step p { font-size: 16px; color: var(--text-dim); line-height: 1.7; }
+
+/* ABOUT */
+.about-section { padding: 120px 0; border-top: 1px solid var(--border); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+.about-grid h2 {
+  font-family: var(--serif); font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700; line-height: 1.1; color: var(--text-bright); margin-bottom: 24px; letter-spacing: -1px;
+}
+.about-grid p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 16px; }
+.about-traits { list-style: none; margin-top: 32px; }
 .about-traits li {
-  padding: 14px 0; border-bottom: 1px solid var(--border-light);
-  font-size: 15px; display: flex; align-items: flex-start; gap: 14px;
-  color: var(--text);
+  padding: 16px 0; border-bottom: 1px solid var(--border);
+  font-size: 15px; color: var(--text); display: flex; align-items: center; gap: 14px;
 }
-.check-icon {
-  width: 22px; height: 22px; background: var(--sage-subtle);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; color: var(--sage); font-size: 12px; font-weight: 700;
-  margin-top: 2px;
-}
-
-/* SERVICES */
-.services-section { background: var(--bg-warm); }
-.services-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 16px; margin-top: 48px;
-}
-.service-card {
-  background: var(--bg-card); border: 1px solid var(--border-light);
-  border-radius: 12px; padding: 28px; transition: all 0.2s;
-}
-.service-card:hover { border-color: var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.04); transform: translateY(-2px); }
-.service-icon {
-  width: 44px; height: 44px; background: var(--accent-subtle);
-  border-radius: 10px; display: flex; align-items: center; justify-content: center;
-  margin-bottom: 18px; font-size: 20px;
-}
-.service-card h3 { font-size: 17px; font-weight: 700; margin-bottom: 10px; color: var(--heading); }
-.service-card p { font-size: 14px; color: var(--text-light); line-height: 1.65; margin-bottom: 14px; }
-.service-impact {
-  font-size: 13px; color: var(--sage); font-weight: 600;
-  padding: 6px 12px; background: var(--sage-subtle); border-radius: 6px;
-  display: inline-block;
-}
-
-/* PROCESS */
-.process-section { border-top: 1px solid var(--border-light); }
-.process-steps {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 20px; margin-top: 48px; position: relative;
-}
-.process-step {
-  background: var(--bg-card); border: 1px solid var(--border-light);
-  border-radius: 12px; padding: 32px; text-align: center;
-}
-.step-number {
-  width: 44px; height: 44px; background: var(--bg-navy); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; font-size: 18px; margin: 0 auto 18px; color: #fff;
-  font-family: var(--serif);
-}
-.process-step h3 { font-size: 18px; font-weight: 700; margin-bottom: 10px; color: var(--heading); }
-.process-step p { font-size: 14px; color: var(--text-light); line-height: 1.65; }
+.trait-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.trait-dot.o { background: var(--accent); }
+.trait-dot.p { background: var(--accent2); }
+.trait-dot.t { background: var(--accent3); }
 
 /* PRICING */
-.pricing-section { background: var(--bg-navy); color: #fff; text-align: center; }
-.pricing-section .section-label { color: rgba(255,255,255,0.5); }
-.pricing-section .section-title { color: #fff; }
+.pricing-section {
+  padding: 120px 0; text-align: center;
+  background: linear-gradient(180deg, transparent 0%, rgba(255,107,53,0.03) 50%, transparent 100%);
+}
+.pricing-section h2 {
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700; color: var(--text-bright); letter-spacing: -1.5px; margin-bottom: 20px;
+}
 .pricing-quote {
-  font-family: var(--serif); font-size: clamp(22px, 3vw, 30px);
-  font-weight: 400; font-style: italic; margin: 32px auto 36px;
-  max-width: 600px; line-height: 1.4; color: rgba(255,255,255,0.9);
+  font-family: var(--serif); font-size: clamp(20px, 3vw, 28px);
+  font-style: italic; color: var(--text-dim); max-width: 600px; margin: 0 auto 48px; line-height: 1.5;
 }
-.pricing-features { list-style: none; max-width: 480px; margin: 0 auto; text-align: left; }
-.pricing-features li {
-  padding: 10px 0; font-size: 15px; color: rgba(255,255,255,0.7);
-  display: flex; align-items: center; gap: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+.pricing-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+.pricing-pill {
+  padding: 12px 24px; border-radius: 100px; font-size: 14px;
+  background: var(--bg-card); border: 1px solid var(--border); color: var(--text);
 }
-.pricing-features li::before {
-  content: '→'; color: var(--accent); font-weight: 600;
-}
-.pricing-cta { margin-top: 40px; }
-.btn-light {
-  display: inline-block; background: #fff; color: var(--heading);
-  padding: 16px 32px; border-radius: 8px; font-size: 15px; font-weight: 600;
-  transition: all 0.2s; border: none; cursor: pointer; font-family: var(--sans);
-}
-.btn-light:hover { background: #f0ede7; color: var(--heading); transform: translateY(-1px); }
 
 /* FAQ */
-.faq-section { border-top: 1px solid var(--border-light); }
-.faq-list { max-width: 680px; margin: 48px auto 0; }
-.faq-item { border-bottom: 1px solid var(--border-light); padding: 20px 0; cursor: pointer; }
+.faq-section { padding: 120px 0; border-top: 1px solid var(--border); }
+.faq-header { text-align: center; margin-bottom: 64px; }
+.faq-header h2 {
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 48px);
+  font-weight: 700; color: var(--text-bright); letter-spacing: -1px;
+}
+.faq-list { max-width: 700px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; cursor: pointer; }
 .faq-question {
-  font-size: 16px; font-weight: 600; display: flex;
-  justify-content: space-between; align-items: center; color: var(--heading);
+  font-size: 17px; font-weight: 600; display: flex;
+  justify-content: space-between; align-items: center; color: var(--text-bright);
 }
 .faq-answer {
-  font-size: 15px; color: var(--text-light); line-height: 1.75;
-  max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s;
+  font-size: 15px; color: var(--text-dim); line-height: 1.75;
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;
 }
-.faq-item.open .faq-answer { max-height: 200px; padding-top: 12px; }
-.faq-toggle { font-size: 20px; color: var(--text-light); transition: transform 0.2s; }
+.faq-item.open .faq-answer { max-height: 300px; padding-top: 14px; }
+.faq-toggle {
+  font-size: 22px; color: var(--text-dim); transition: transform 0.3s;
+  width: 32px; height: 32px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; background: var(--bg-card);
+}
 .faq-item.open .faq-toggle { transform: rotate(45deg); }
 
 /* BLOG */
-.blog-section { background: var(--bg-warm); }
-.blog-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px; margin-top: 48px;
+.blog-section { padding: 120px 0; border-top: 1px solid var(--border); }
+.blog-header { text-align: center; margin-bottom: 64px; }
+.blog-header h2 {
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 48px);
+  font-weight: 700; color: var(--text-bright); letter-spacing: -1px;
 }
+.blog-header p { font-size: 17px; color: var(--text-dim); margin-top: 12px; }
+.blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .blog-card {
-  background: var(--bg-card); border: 1px solid var(--border-light);
-  border-radius: 12px; padding: 28px; cursor: pointer; transition: all 0.2s;
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: 16px; padding: 32px; cursor: pointer; transition: all 0.3s;
+  position: relative; overflow: hidden;
 }
-.blog-card:hover { border-color: var(--border); box-shadow: 0 4px 20px rgba(0,0,0,0.04); transform: translateY(-2px); }
-.blog-date { font-size: 12px; color: var(--text-light); font-weight: 500; margin-bottom: 10px; }
+.blog-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gradient-hero); opacity: 0; transition: opacity 0.3s;
+}
+.blog-card:hover { background: var(--bg-card-hover); transform: translateY(-4px); }
+.blog-card:hover::before { opacity: 1; }
+.blog-date { font-size: 12px; color: var(--text-dim); font-weight: 500; margin-bottom: 12px; }
 .blog-card h3 {
-  font-family: var(--serif); font-size: 18px; font-weight: 400;
-  margin-bottom: 10px; line-height: 1.35; color: var(--heading);
+  font-family: var(--serif); font-size: 18px; font-weight: 700;
+  margin-bottom: 10px; line-height: 1.3; color: var(--text-bright);
 }
-.blog-card p { font-size: 14px; color: var(--text-light); line-height: 1.6; }
+.blog-card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
 .blog-tag {
-  display: inline-block; background: var(--sage-subtle); color: var(--sage);
-  padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;
-  margin-top: 14px;
+  display: inline-block; padding: 4px 12px; border-radius: 100px;
+  font-size: 11px; font-weight: 600; margin-top: 16px;
+  background: rgba(255,107,53,0.1); color: var(--accent);
 }
 
 /* CONTACT */
-.contact-section { border-top: 1px solid var(--border-light); text-align: center; }
-.contact-form { max-width: 560px; margin: 48px auto 0; text-align: left; }
+.contact-section {
+  padding: 120px 0; text-align: center;
+  background: linear-gradient(180deg, transparent, rgba(123,97,255,0.04));
+}
+.contact-section h2 {
+  font-family: var(--serif); font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700; color: var(--text-bright); letter-spacing: -1.5px; margin-bottom: 12px;
+}
+.contact-section .sub { font-size: 17px; color: var(--text-dim); margin-bottom: 48px; }
+.contact-form { max-width: 560px; margin: 0 auto; text-align: left; }
 .form-group { margin-bottom: 16px; }
 .form-group label {
-  display: block; font-size: 13px; font-weight: 600; color: var(--text-light);
-  margin-bottom: 6px; letter-spacing: 0.3px;
+  display: block; font-size: 13px; font-weight: 600; color: var(--text-dim);
+  margin-bottom: 6px; letter-spacing: 0.5px;
 }
 .form-group input, .form-group textarea {
-  width: 100%; padding: 14px 16px; background: var(--bg-card);
-  border: 1px solid var(--border); border-radius: 8px; color: var(--text);
-  font-family: var(--sans); font-size: 15px; transition: border 0.2s;
+  width: 100%; padding: 16px 18px; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: 12px; color: var(--text);
+  font-family: var(--sans); font-size: 15px; transition: border 0.3s;
 }
-.form-group input:focus, .form-group textarea:focus {
-  outline: none; border-color: var(--accent);
-}
+.form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
 .form-group textarea { resize: vertical; min-height: 100px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .submit-btn {
-  width: 100%; padding: 16px; background: var(--accent); color: #fff;
-  border: none; border-radius: 8px; font-size: 15px; font-weight: 600;
-  cursor: pointer; transition: background 0.2s; font-family: var(--sans);
-  margin-top: 8px;
+  width: 100%; padding: 18px; background: var(--gradient-hero); color: #fff;
+  border: none; border-radius: 100px; font-size: 16px; font-weight: 600;
+  cursor: pointer; transition: all 0.3s; font-family: var(--sans); margin-top: 8px;
+  box-shadow: 0 4px 30px var(--accent-glow);
 }
-.submit-btn:hover { background: var(--accent-hover); }
+.submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 40px var(--accent-glow); }
 
 /* FOOTER */
-footer {
-  padding: 40px 0; border-top: 1px solid var(--border-light);
-  text-align: center;
-}
-footer p { font-size: 13px; color: var(--text-light); }
+footer { padding: 48px 0; border-top: 1px solid var(--border); text-align: center; }
+footer p { font-size: 13px; color: var(--text-dim); }
 footer .footer-local {
-  font-size: 14px; color: var(--sage); font-weight: 500;
-  margin-bottom: 8px;
+  font-size: 14px; font-weight: 500; margin-bottom: 8px;
+  background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
 /* BLOG POST VIEW */
-.blog-post-view {
-  display: none; max-width: 700px; margin: 0 auto;
-  padding: 130px 24px 80px;
-}
+.blog-post-view { display: none; max-width: 700px; margin: 0 auto; padding: 140px 32px 80px; }
 .blog-post-view.active { display: block; }
 .blog-back {
   display: inline-flex; align-items: center; gap: 8px;
-  color: var(--text-light); font-size: 14px; font-weight: 500;
-  margin-bottom: 32px; cursor: pointer; transition: color 0.2s;
+  color: var(--text-dim); font-size: 14px; font-weight: 500;
+  margin-bottom: 40px; cursor: pointer; transition: color 0.3s;
 }
-.blog-back:hover { color: var(--text); }
-.blog-post-view .post-date { font-size: 13px; color: var(--text-light); margin-bottom: 12px; }
+.blog-back:hover { color: var(--text-bright); }
+.blog-post-view .post-date { font-size: 13px; color: var(--text-dim); margin-bottom: 16px; }
 .blog-post-view h1 {
-  font-family: var(--serif); font-size: clamp(28px, 4vw, 40px);
-  font-weight: 400; line-height: 1.2; margin-bottom: 28px;
-  color: var(--heading); letter-spacing: -0.3px;
+  font-family: var(--serif); font-size: clamp(32px, 5vw, 48px);
+  font-weight: 700; line-height: 1.1; margin-bottom: 32px;
+  color: var(--text-bright); letter-spacing: -1px;
 }
-.blog-post-view .post-body { color: var(--text-light); }
+.blog-post-view .post-body { color: var(--text-dim); }
 .blog-post-view .post-body h2 {
-  font-family: var(--serif); color: var(--heading); font-size: 24px;
-  font-weight: 400; margin: 40px 0 16px;
+  font-family: var(--serif); color: var(--text-bright); font-size: 28px;
+  font-weight: 700; margin: 48px 0 18px; letter-spacing: -0.5px;
 }
-.blog-post-view .post-body p { margin-bottom: 18px; line-height: 1.85; font-size: 16px; }
+.blog-post-view .post-body p { margin-bottom: 20px; line-height: 1.85; font-size: 16px; }
 .blog-post-view .post-body strong { color: var(--text); }
 .blog-post-view .post-cta {
-  margin-top: 48px; padding: 32px; background: var(--bg-warm);
-  border: 1px solid var(--border-light); border-radius: 12px; text-align: center;
+  margin-top: 56px; padding: 40px; background: var(--bg-card);
+  border: 1px solid var(--border); border-radius: 20px; text-align: center;
 }
-.blog-post-view .post-cta p {
-  color: var(--heading); font-weight: 600; font-size: 17px; margin-bottom: 16px;
-}
+.blog-post-view .post-cta p { color: var(--text-bright); font-weight: 600; font-size: 18px; margin-bottom: 20px; }
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .problem-grid { grid-template-columns: repeat(2, 1fr); }
-  .services-grid { grid-template-columns: 1fr; }
+  .illo-grid, .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .illo-grid.reverse { direction: ltr; }
+  .bento-grid { grid-template-columns: 1fr; }
+  .bento-card.featured { grid-column: span 1; }
+  .blog-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .nav-links { display: none; }
   .mobile-menu { display: block; }
   .nav-links.open {
     display: flex; flex-direction: column; position: absolute;
-    top: 100%; left: 0; right: 0; background: var(--bg);
-    border-bottom: 1px solid var(--border-light); padding: 20px 24px; gap: 16px;
+    top: 100%; left: 0; right: 0; background: rgba(10,10,15,0.95);
+    border-bottom: 1px solid var(--border); padding: 20px 32px; gap: 16px;
   }
-  .about-content { grid-template-columns: 1fr; gap: 32px; }
-  .process-steps { grid-template-columns: 1fr; }
+  .hero h1 { letter-spacing: -1px; }
+  .hero-cta-group { flex-direction: column; align-items: center; }
   .form-row { grid-template-columns: 1fr; }
-  .problem-grid { grid-template-columns: 1fr 1fr; }
-  section { padding: 60px 0; }
-  .hero { padding: 110px 0 50px; }
-  .hero-stat-row { gap: 10px; }
-  .blog-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 480px) {
-  .problem-grid { grid-template-columns: 1fr; }
+  .marquee-num { font-size: 36px; }
+  section, .illustration-section, .bento-section, .timeline-section, .pricing-section, .faq-section, .blog-section, .contact-section { padding: 80px 0; }
 }
 </style>
 </head>
@@ -411,7 +426,7 @@ footer .footer-local {
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" onclick="showMain(); return false;" class="nav-brand" style="text-decoration:none;">Wes</a>
+    <a href="#" onclick="showMain(); return false;" class="nav-brand" style="text-decoration:none;"><span>Wes</span></a>
     <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
     <div class="nav-links">
       <a href="#services" onclick="showMain(); return false;">Services</a>
@@ -427,41 +442,208 @@ footer .footer-local {
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-bg-art">
+    <div class="blob1"></div>
+    <div class="blob2"></div>
+    <div class="blob3"></div>
+  </div>
   <div class="container">
-    <div class="hero-inner">
-      <div>
-        <div class="hero-local">
-          <span class="hero-local-dot"></span>
-          Duxbury, MA — Serving the South Shore &amp; Greater Boston
-        </div>
-        <h1>Your business runs on systems. I make them run themselves.</h1>
-        <p>I build custom AI-powered automations for local businesses — review management, lead follow-up, customer retention, and more. No templates, no outsourcing. Just a Duxbury local who builds things that work.</p>
-        <a href="#contact" class="btn-primary">Book a Free Automation Audit</a>
-        <p class="hero-sub">30 minutes. No cost. Walk away with a clear plan either way.</p>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Duxbury, MA — Serving the South Shore &amp; Greater Boston
       </div>
-      <div class="hero-right">
-        <h3>The gap most local businesses don't see</h3>
-        <div class="hero-stat-row">
-          <div class="hero-stat">
-            <div class="hero-stat-num">87%</div>
-            <div class="hero-stat-label">never reply to<br>negative reviews</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">5-9%</div>
-            <div class="hero-stat-label">revenue boost per<br>star on Google</div>
-          </div>
-        </div>
-        <div class="hero-stat-row">
-          <div class="hero-stat">
-            <div class="hero-stat-num">80%</div>
-            <div class="hero-stat-label">of sales need<br>5+ follow-ups</div>
-          </div>
-          <div class="hero-stat">
-            <div class="hero-stat-num">5x</div>
-            <div class="hero-stat-label">cheaper to keep<br>a customer</div>
-          </div>
-        </div>
-        <p>These are problems that automation solves overnight. Most South Shore businesses just haven't connected the dots yet.</p>
+      <h1>Systems that <span class="gradient-text">run themselves.</span></h1>
+      <p class="hero-sub">AI-powered automations for local businesses. Reviews, leads, retention, CRM — built by your neighbor, not a faceless agency.</p>
+      <div class="hero-cta-group">
+        <a href="#contact" class="btn-big btn-primary-big">Book a Free Audit &rarr;</a>
+        <a href="#services" class="btn-big btn-ghost">See What I Build</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAT MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item"><span class="marquee-num">87%</span><span class="marquee-label">of businesses never reply to negative reviews</span></div>
+    <div class="marquee-item"><span class="marquee-num">5-9%</span><span class="marquee-label">revenue boost per star on Google</span></div>
+    <div class="marquee-item"><span class="marquee-num">80%</span><span class="marquee-label">of sales need 5+ follow-up touches</span></div>
+    <div class="marquee-item"><span class="marquee-num">5x</span><span class="marquee-label">cheaper to keep a customer than find a new one</span></div>
+    <div class="marquee-item"><span class="marquee-num">87%</span><span class="marquee-label">of businesses never reply to negative reviews</span></div>
+    <div class="marquee-item"><span class="marquee-num">5-9%</span><span class="marquee-label">revenue boost per star on Google</span></div>
+    <div class="marquee-item"><span class="marquee-num">80%</span><span class="marquee-label">of sales need 5+ follow-up touches</span></div>
+    <div class="marquee-item"><span class="marquee-num">5x</span><span class="marquee-label">cheaper to keep a customer than find a new one</span></div>
+  </div>
+</div>
+
+<!-- ILLUSTRATION 1: REVIEWS -->
+<section class="illustration-section">
+  <div class="container">
+    <div class="illo-grid">
+      <div class="illo-text">
+        <div class="section-label">The Problem</div>
+        <h2>Every unanswered review is a customer walking away.</h2>
+        <p>Someone left you a one-star review at 11pm. By 8am, forty potential customers saw it with no response. They kept scrolling.</p>
+        <p>My review agent monitors 24/7, drafts thoughtful responses, and sends you a Monday digest with trends. You tap approve. The system handles the rest.</p>
+      </div>
+      <div class="illo-art">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#FF3CAC"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#7B61FF"/><stop offset="100%" stop-color="#00D4AA"/>
+            </linearGradient>
+          </defs>
+          <polygon points="250,40 262,80 304,80 270,104 282,144 250,120 218,144 230,104 196,80 238,80" fill="url(#g1)" opacity="0.9">
+            <animateTransform attributeName="transform" type="rotate" from="0 250 92" to="360 250 92" dur="60s" repeatCount="indefinite"/>
+          </polygon>
+          <polygon points="120,200 128,224 154,224 134,240 142,264 120,248 98,264 106,240 86,224 112,224" fill="url(#g2)" opacity="0.7">
+            <animateTransform attributeName="transform" type="rotate" from="0 120 232" to="-360 120 232" dur="45s" repeatCount="indefinite"/>
+          </polygon>
+          <polygon points="380,180 388,204 414,204 394,220 402,244 380,228 358,244 366,220 346,204 372,204" fill="#FF6B35" opacity="0.5"/>
+          <line x1="250" y1="120" x2="120" y2="200" stroke="url(#g1)" stroke-width="1" opacity="0.3"/>
+          <line x1="250" y1="120" x2="380" y2="180" stroke="url(#g2)" stroke-width="1" opacity="0.3"/>
+          <line x1="120" y1="200" x2="380" y2="180" stroke="#FF3CAC" stroke-width="1" opacity="0.2"/>
+          <rect x="160" y="300" width="180" height="60" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+          <rect x="168" y="316" width="80" height="6" rx="3" fill="#FF6B35" opacity="0.5"/>
+          <rect x="168" y="330" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+          <rect x="168" y="344" width="60" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+          <rect x="200" y="380" width="200" height="70" rx="12" fill="rgba(0,212,170,0.08)" stroke="rgba(0,212,170,0.2)" stroke-width="1"/>
+          <rect x="212" y="398" width="90" height="6" rx="3" fill="#00D4AA" opacity="0.5"/>
+          <rect x="212" y="412" width="160" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+          <rect x="212" y="426" width="100" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+          <path d="M250 360 L260 380" stroke="#00D4AA" stroke-width="2" opacity="0.5" stroke-dasharray="4 4">
+            <animate attributeName="stroke-dashoffset" from="0" to="-8" dur="1s" repeatCount="indefinite"/>
+          </path>
+          <ellipse cx="250" cy="250" rx="200" ry="180" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
+          <path id="orbit1" d="M450,250 A200,180 0 1,1 449.99,250" fill="none"/>
+          <circle r="4" fill="#FF6B35"><animateMotion dur="12s" repeatCount="indefinite"><mpath href="#orbit1"/></animateMotion></circle>
+          <circle r="3" fill="#7B61FF"><animateMotion dur="18s" repeatCount="indefinite"><mpath href="#orbit1"/></animateMotion></circle>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ILLUSTRATION 2: LEADS -->
+<section class="illustration-section" style="border-top: 1px solid var(--border);">
+  <div class="container">
+    <div class="illo-grid reverse">
+      <div class="illo-text">
+        <div class="section-label">The Gap</div>
+        <h2>Your leads aren't cold. They're just ignored.</h2>
+        <p>A form comes in at 9pm. Your team sees it at 9am. By then, two competitors already replied.</p>
+        <p>My follow-up automator responds in under two minutes, across email and text, with a personalized sequence that adapts to behavior. Your team only steps in when the lead is warm and ready.</p>
+      </div>
+      <div class="illo-art">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="funnel-g" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#7B61FF" stop-opacity="0.3"/>
+              <stop offset="100%" stop-color="#FF6B35" stop-opacity="0.3"/>
+            </linearGradient>
+          </defs>
+          <path d="M100,80 L400,80 L320,240 L180,240 Z" fill="url(#funnel-g)" stroke="rgba(123,97,255,0.3)" stroke-width="1"/>
+          <path d="M180,240 L320,240 L290,400 L210,400 Z" fill="rgba(255,107,53,0.1)" stroke="rgba(255,107,53,0.3)" stroke-width="1"/>
+          <circle cx="200" cy="100" r="6" fill="#7B61FF" opacity="0.8">
+            <animate attributeName="cy" from="60" to="420" dur="4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" from="0.8" to="0.2" dur="4s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="300" cy="100" r="5" fill="#FF6B35" opacity="0.6">
+            <animate attributeName="cy" from="60" to="420" dur="5s" begin="1s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" from="0.6" to="0.1" dur="5s" begin="1s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="250" cy="100" r="7" fill="#00D4AA" opacity="0.7">
+            <animate attributeName="cy" from="60" to="420" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" from="0.7" to="0.3" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="340" cy="100" r="4" fill="#FF3CAC" opacity="0.5">
+            <animate attributeName="cy" from="60" to="420" dur="6s" begin="2s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="160" cy="100" r="5" fill="#7B61FF" opacity="0.4">
+            <animate attributeName="cy" from="60" to="420" dur="4.5s" begin="3s" repeatCount="indefinite"/>
+          </circle>
+          <text x="430" y="100" fill="#8A8680" font-size="11" font-family="Space Grotesk, sans-serif">2 min</text>
+          <text x="430" y="180" fill="#8A8680" font-size="11" font-family="Space Grotesk, sans-serif">1 hour</text>
+          <text x="430" y="260" fill="#8A8680" font-size="11" font-family="Space Grotesk, sans-serif">1 day</text>
+          <text x="430" y="340" fill="#8A8680" font-size="11" font-family="Space Grotesk, sans-serif">3 days</text>
+          <text x="430" y="420" fill="rgba(255,107,53,0.6)" font-size="11" font-family="Space Grotesk, sans-serif" font-weight="600">Lost</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENTO SERVICES -->
+<section id="services" class="bento-section">
+  <div class="container">
+    <div class="bento-header"><h2>What I build.</h2></div>
+    <div class="bento-grid">
+      <div class="bento-card featured">
+        <div class="bento-icon orange">&#9733;</div>
+        <h3>Review Response Agent</h3>
+        <p>AI monitors your Google Business Profile 24/7. Positive reviews get instant personalized replies. Negatives get a draft sent to your phone. Monday digest shows trends and complaint themes.</p>
+        <span class="bento-tag orange">Most Popular</span>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon purple">&#9889;</div>
+        <h3>Lead Follow-Up</h3>
+        <p>Every lead gets a personalized multi-channel sequence within minutes. No lead sits untouched.</p>
+        <span class="bento-tag purple">High ROI</span>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon teal">&#8635;</div>
+        <h3>Win-Back Engine</h3>
+        <p>Flags customers who've gone dark and triggers personalized re-engagement automatically.</p>
+        <span class="bento-tag teal">Retention</span>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon purple">&#9776;</div>
+        <h3>CRM Cleanup &amp; Automation</h3>
+        <p>Audit, clean, and automate your CRM — tagging, lifecycle updates, and triggered comms.</p>
+        <span class="bento-tag purple">Foundation</span>
+      </div>
+      <div class="bento-card featured">
+        <div class="bento-icon teal">&#128200;</div>
+        <h3>Weekly Business Digest</h3>
+        <p>Every Monday: one page, plain English. Key metrics, trends, anomalies, and what to do about them. Pulled from your reviews, CRM, website, and sales data. No dashboards to learn.</p>
+        <span class="bento-tag teal">Intelligence</span>
+      </div>
+      <div class="bento-card">
+        <div class="bento-icon orange">&#128197;</div>
+        <h3>Booking &amp; No-Shows</h3>
+        <p>Scheduling, confirmations, reminders, and no-show follow-ups — all integrated and automated.</p>
+        <span class="bento-tag orange">Operations</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE PROCESS -->
+<section id="process" class="timeline-section">
+  <div class="container">
+    <div class="timeline-header"><h2>Three steps. That's it.</h2></div>
+    <div class="timeline">
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <div class="step-label">Step One</div>
+        <h3>Free Automation Audit</h3>
+        <p>We sit down — in person at a coffee shop in Duxbury, or on a quick video call. I look at your operations and identify the 2-3 automations that'll make the biggest impact. No cost. No commitment.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <div class="step-label">Step Two</div>
+        <h3>Build &amp; Launch</h3>
+        <p>I design and build your custom system. You see it working before you pay. Typical build time: one to two weeks.</p>
+      </div>
+      <div class="timeline-step">
+        <div class="timeline-dot"></div>
+        <div class="step-label">Step Three</div>
+        <h3>Optimize &amp; Support</h3>
+        <p>I monitor performance, tune the system, and send you regular reports. If it's not delivering value, you don't pay. Simple as that.</p>
       </div>
     </div>
   </div>
@@ -470,100 +652,21 @@ footer .footer-local {
 <!-- ABOUT -->
 <section id="about" class="about-section">
   <div class="container">
-    <div class="about-content">
+    <div class="about-grid">
       <div>
-        <div class="section-label">Who I Am</div>
-        <h2 class="section-title">Local. Hands-on.<br>No middlemen.</h2>
-        <div class="about-text">
-          <p>I'm Wes. I live in Duxbury with my family, and I work with businesses I can actually walk into. No Zoom-only relationships. No offshore team. When you hire me, you get me.</p>
-          <p>My background is in CRM strategy, customer retention systems, and marketing automation. I've spent years designing the systems that turn messy operations into machines that run themselves. Now I build them for South Shore businesses — restaurants, service companies, medical practices, retail shops, and anyone else who's tired of losing time to work a computer should be handling.</p>
-        </div>
-        <div class="about-local-callout">
-          <p>I'm your neighbor, not a vendor. I shop at the same places you do. I care about this community — and I only take on clients I know I can help.</p>
-        </div>
+        <h2>Local. Hands-on. No middlemen.</h2>
+        <p>I'm Wes. I live in Duxbury with my family, and I work with businesses I can actually walk into. No Zoom-only relationships. No offshore team. When you hire me, you get me.</p>
+        <p>My background is in CRM strategy, customer retention systems, and marketing automation. I've spent years designing systems that turn messy operations into machines that run themselves. Now I build them for South Shore businesses.</p>
       </div>
       <div>
         <ul class="about-traits">
-          <li><span class="check-icon">&#10003;</span> Based in Duxbury — face-to-face, not faceless</li>
-          <li><span class="check-icon">&#10003;</span> Deep expertise in CRM, retention, and customer systems</li>
-          <li><span class="check-icon">&#10003;</span> Every automation custom-built for your business</li>
-          <li><span class="check-icon">&#10003;</span> Personally built and maintained — no outsourcing, ever</li>
-          <li><span class="check-icon">&#10003;</span> ROI-first: if it doesn't pay for itself, I won't build it</li>
-          <li><span class="check-icon">&#10003;</span> Proudly serving South Shore &amp; greater Boston businesses</li>
+          <li><span class="trait-dot o"></span> Based in Duxbury — face-to-face, not faceless</li>
+          <li><span class="trait-dot p"></span> Deep expertise in CRM, retention, and customer systems</li>
+          <li><span class="trait-dot t"></span> Every automation custom-built for your business</li>
+          <li><span class="trait-dot o"></span> Personally built and maintained — no outsourcing, ever</li>
+          <li><span class="trait-dot p"></span> ROI-first: if it doesn't pay for itself, I won't build it</li>
+          <li><span class="trait-dot t"></span> Proudly serving South Shore &amp; greater Boston</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section id="services" class="services-section">
-  <div class="container">
-    <div class="section-label">What I Build</div>
-    <h2 class="section-title">Automations that save time and make money.</h2>
-    <p class="section-subtitle">Tailored to your business. Built to pay for themselves. Maintained by me personally.</p>
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-icon">&#9733;</div>
-        <h3>Review Response Agent</h3>
-        <p>AI monitors your Google Business Profile around the clock. Positive reviews get personalized replies instantly. Negative reviews get a draft sent to you for approval. Weekly digest shows rating trends and complaint themes.</p>
-        <div class="service-impact">Higher ratings, more customers choosing you</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#9889;</div>
-        <h3>Lead Follow-Up Automator</h3>
-        <p>When a lead comes in — form, call, or DM — the system triggers a personalized follow-up sequence across email and text, timed to maximize response. No lead sits untouched for more than five minutes.</p>
-        <div class="service-impact">Convert more leads without hiring</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#8635;</div>
-        <h3>Customer Win-Back Engine</h3>
-        <p>Identifies customers who haven't come back in 60, 90, or 120 days and triggers re-engagement — personalized offers, check-ins, or loyalty rewards — automatically.</p>
-        <div class="service-impact">Turn your existing list into recurring revenue</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#9776;</div>
-        <h3>CRM Cleanup &amp; Automation</h3>
-        <p>Audit your existing CRM (or set one up), clean the data, and build automations: auto-tagging, lifecycle updates, task creation, and triggered communications based on customer behavior.</p>
-        <div class="service-impact">A CRM that works for you, not against you</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#128197;</div>
-        <h3>Appointment &amp; Booking</h3>
-        <p>AI handles scheduling, confirmations, reminders, and no-show follow-ups. Integrates with your calendar, your website, and your phone system.</p>
-        <div class="service-impact">Fewer no-shows, more booked slots</div>
-      </div>
-      <div class="service-card">
-        <div class="service-icon">&#128200;</div>
-        <h3>Weekly Business Digest</h3>
-        <p>Every Monday: key metrics, trends, anomalies, and AI-generated recommendations pulled from your reviews, CRM, website, or sales data. One page. Plain English.</p>
-        <div class="service-impact">Know what's working without the dashboards</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section id="process" class="process-section">
-  <div class="container" style="text-align: center;">
-    <div class="section-label">How It Works</div>
-    <h2 class="section-title">Three steps. That's it.</h2>
-    <p class="section-subtitle" style="margin: 0 auto;">No long onboarding. No months-long timelines. We move fast.</p>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="step-number">1</div>
-        <h3>Free Automation Audit</h3>
-        <p>We sit down — in person at a coffee shop in Duxbury, or on a quick video call. I look at your operations and identify the 2-3 automations that'll make the biggest impact. No cost, no commitment.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">2</div>
-        <h3>Build &amp; Launch</h3>
-        <p>I design and build your custom system. You see it working before you pay. Typical build time: one to two weeks.</p>
-      </div>
-      <div class="process-step">
-        <div class="step-number">3</div>
-        <h3>Optimize &amp; Support</h3>
-        <p>I monitor performance, tune the system, and send you regular reports. If it's not delivering value, you don't pay. Simple as that.</p>
       </div>
     </div>
   </div>
@@ -572,27 +675,23 @@ footer .footer-local {
 <!-- PRICING -->
 <section class="pricing-section">
   <div class="container">
-    <div class="section-label">Pricing</div>
-    <h2 class="section-title">Our success is aligned with your success.</h2>
+    <h2>Our success is aligned.</h2>
     <p class="pricing-quote">"If it's not saving you time or making you money, you don't pay."</p>
-    <ul class="pricing-features">
-      <li>No long-term contracts — month-to-month after initial setup</li>
-      <li>Setup fee covers the build. Monthly retainer covers support.</li>
-      <li>ROI-first: I only build things that pay for themselves</li>
-      <li>Most clients see full ROI within the first 30 days</li>
-      <li>If the automation isn't delivering, we part ways. No hard&nbsp;feelings.</li>
-    </ul>
-    <div class="pricing-cta">
-      <a href="#contact" class="btn-light">Let's Talk Numbers</a>
+    <div class="pricing-pills">
+      <div class="pricing-pill">No long-term contracts</div>
+      <div class="pricing-pill">Setup fee + monthly retainer</div>
+      <div class="pricing-pill">ROI within 30 days</div>
+      <div class="pricing-pill">Month-to-month after build</div>
+      <div class="pricing-pill">No hard feelings if it's not working</div>
     </div>
+    <a href="#contact" class="btn-big btn-primary-big">Let's Talk Numbers &rarr;</a>
   </div>
 </section>
 
 <!-- FAQ -->
 <section id="faq" class="faq-section">
-  <div class="container" style="text-align: center;">
-    <div class="section-label">FAQ</div>
-    <h2 class="section-title">Questions I get a lot.</h2>
+  <div class="container">
+    <div class="faq-header"><h2>Questions I get a lot.</h2></div>
     <div class="faq-list">
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <div class="faq-question">Is this going to replace my staff? <span class="faq-toggle">+</span></div>
@@ -616,7 +715,7 @@ footer .footer-local {
       </div>
       <div class="faq-item" onclick="this.classList.toggle('open')">
         <div class="faq-question">What's the catch with the free audit? <span class="faq-toggle">+</span></div>
-        <div class="faq-answer">There isn't one. I'll show you exactly what I'd build and what it would save you. If it makes sense, we move forward. If not, you walk away with free advice about your operations.</div>
+        <div class="faq-answer">There isn't one. I'll show you exactly what I'd build and what it would save you. If it makes sense, we move forward. If not, you walk away with free advice.</div>
       </div>
     </div>
   </div>
@@ -625,9 +724,10 @@ footer .footer-local {
 <!-- BLOG -->
 <section id="blog" class="blog-section">
   <div class="container">
-    <div class="section-label">Insights</div>
-    <h2 class="section-title">From the blog.</h2>
-    <p class="section-subtitle">Practical thinking on automation, retention, and running a smarter local business.</p>
+    <div class="blog-header">
+      <h2>From the blog.</h2>
+      <p>Practical thinking on automation, retention, and running a smarter local business.</p>
+    </div>
     <div class="blog-grid">
       <div class="blog-card" onclick="showPost('post1')">
         <div class="blog-date">March 2, 2026</div>
@@ -645,7 +745,7 @@ footer .footer-local {
         <div class="blog-date">March 4, 2026</div>
         <h3>What a Weekly Intelligence Digest Looks Like for a Local Business</h3>
         <p>A Monday morning briefing that tells you what happened, what's trending, and what to do about it.</p>
-        <div class="blog-tag">Business Intelligence</div>
+        <div class="blog-tag">Intelligence</div>
       </div>
       <div class="blog-card" onclick="showPost('post4')">
         <div class="blog-date">March 5, 2026</div>
@@ -672,9 +772,8 @@ footer .footer-local {
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="container">
-    <div class="section-label">Get Started</div>
-    <h2 class="section-title">Book your free automation audit.</h2>
-    <p class="section-subtitle" style="margin: 0 auto;">Tell me about your business. I'll show you where automation makes the biggest impact.</p>
+    <h2>Let's build something.</h2>
+    <p class="sub">Tell me about your business. I'll show you where automation makes the biggest impact.</p>
     <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
       <div class="form-row">
         <div class="form-group">
@@ -700,8 +799,8 @@ footer .footer-local {
         <label for="pain">What's eating up most of your time?</label>
         <textarea id="pain" name="pain" placeholder="Tell me about the tasks you wish you could hand off..."></textarea>
       </div>
-      <button type="submit" class="submit-btn">Request My Free Audit</button>
-      <p style="text-align:center; margin-top:12px; font-size:13px; color:var(--text-light);">Or just text me at <span id="cNum"></span> — I'll get back to you the&nbsp;same&nbsp;day.</p>
+      <button type="submit" class="submit-btn">Request My Free Audit &rarr;</button>
+      <p style="text-align:center; margin-top:14px; font-size:13px; color:var(--text-dim);">Or just text me at <span id="cNum"></span> — I'll get back to you the&nbsp;same&nbsp;day.</p>
     </form>
   </div>
 </section>
@@ -723,27 +822,18 @@ footer .footer-local {
   <div class="post-body">
     <p>Think about the last time you picked a restaurant, a plumber, or a dentist. You probably did what everyone does: you Googled it and read the reviews. If the reviews were bad — or worse, if the business never responded to a complaint — you moved on. Took about three seconds.</p>
     <p>That's the reality for every local business on the South Shore right now. Your Google reviews are doing more selling than your website, your social media, and your front-of-house team combined. And most businesses are completely ignoring them.</p>
-
     <h2>The Numbers Don't Lie</h2>
-    <p>Nearly all consumers read online reviews before choosing a local business. That alone should make review management a top priority. But here's where it gets painful: the vast majority of businesses never respond to negative reviews. They just sit there — one star, detailed complaint, zero response — telling every future customer "we don't care enough to reply."</p>
-    <p>Meanwhile, the data on what happens when you <em>do</em> respond is compelling. A one-star improvement on Google correlates with a 5-9% revenue increase. For a restaurant on Washington Street doing half a million a year, that's potentially tens of thousands of dollars. Not from a new marketing campaign. Not from a rebrand. Just from responding to people who already walked through your door.</p>
-
+    <p>Nearly all consumers read online reviews before choosing a local business. The vast majority of businesses never respond to negative reviews. They just sit there — one star, detailed complaint, zero response — telling every future customer "we don't care enough to reply."</p>
+    <p>A one-star improvement on Google correlates with a 5-9% revenue increase. For a restaurant doing half a million a year, that's potentially tens of thousands of dollars.</p>
     <h2>Why Businesses Don't Respond</h2>
-    <p>It's rarely because they don't care. It's because they're busy. The owner is running payroll, managing staff, handling supply issues, and putting out fires. Sitting down to craft a thoughtful reply to a three-star review about parking? It falls to the bottom of the list every single day.</p>
-    <p>And negative reviews are harder. They're emotional. A bad review feels personal when you've poured everything into your business. So the instinct is to ignore it — or worse, fire back defensively. Neither helps.</p>
-
+    <p>It's rarely because they don't care. It's because they're busy. The owner is running payroll, managing staff, handling supply issues, and putting out fires.</p>
     <h2>The Speed Factor</h2>
-    <p>There's another dimension most businesses miss: speed matters. Customers who leave reviews — positive or negative — are most engaged in the first few hours. A quick, genuine response to a positive review reinforces loyalty. A fast, empathetic response to a negative one can actually turn a critic into an advocate. But if your reply comes three weeks later? The moment's gone.</p>
-    <p>This is where the gap becomes an opportunity. The businesses that respond quickly and consistently stand out precisely because so few do it. It's not a high bar to clear. You just have to show up.</p>
-
+    <p>Customers who leave reviews are most engaged in the first few hours. A quick response reinforces loyalty. A fast response to a negative one can turn a critic into an advocate. But if your reply comes three weeks later? The moment's gone.</p>
     <h2>What This Looks Like Automated</h2>
-    <p>What if every positive review got a personalized thank-you within minutes — one that actually references what the customer said, not a generic copy-paste? What if every negative review generated a thoughtful draft response, sent to your phone for a quick approval tap before it goes live? What if every Monday, you got a one-page summary: new reviews, average rating trend, top complaints, and what to focus on this week?</p>
-    <p>That's not hypothetical. That's a system I build for local businesses right here on the South Shore. It runs quietly in the background, costs a fraction of what you'd pay a social media manager, and never takes a day off.</p>
-    <p>Your reviews are already the most trusted marketing channel you have. The only question is whether you're going to use them.</p>
-
+    <p>Every positive review gets a personalized thank-you within minutes. Every negative review generates a draft sent to your phone. Every Monday, a one-page summary: ratings, trends, complaints, and what to focus on.</p>
     <div class="post-cta">
       <p>Want to see how a review response system would work for your business?</p>
-      <a href="#contact" class="btn-primary" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
+      <a href="#contact" class="btn-big btn-primary-big" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
     </div>
   </div>
 </div>
@@ -753,29 +843,16 @@ footer .footer-local {
   <div class="post-date">March 3, 2026</div>
   <h1>The Follow-Up Problem: Why Your Leads Go Cold</h1>
   <div class="post-body">
-    <p>You're spending money on ads. You're showing up at networking events. Your website has a contact form. Leads are coming in. And then... nothing happens. Or rather, something happens — but it happens too slowly, too generically, or not enough times.</p>
-    <p>This is the follow-up problem, and it's silently killing conversion rates for local businesses across the South Shore.</p>
-
+    <p>You're spending money on ads. Your website has a contact form. Leads are coming in. And then... nothing happens.</p>
     <h2>The Five-Touch Reality</h2>
-    <p>Research consistently shows that most sales require five or more follow-up touches before a prospect converts. Five. But most businesses — especially small ones — stop after one. Maybe two. A form comes in, someone sends a reply the next day, and if the prospect doesn't respond immediately, the lead gets filed under "not interested" and forgotten.</p>
-    <p>The prospect wasn't uninterested. They were busy. They were comparing options. They needed a nudge — a well-timed second touch, a third, a fourth. But your team moved on because there are twenty other things demanding attention right now.</p>
-
+    <p>Most sales require five or more follow-up touches. But most businesses stop after one. The prospect wasn't uninterested. They were busy.</p>
     <h2>Speed Is the First Problem</h2>
-    <p>When a lead fills out a form on your website at 9pm on a Tuesday, what happens? If the answer is "someone checks it the next morning," you've already lost ground. The probability of qualifying a lead drops dramatically after the first few minutes. Not hours. Minutes.</p>
-    <p>Your competitors who respond in five minutes are closing deals that you never even got a shot at — not because their service is better, but because they were faster.</p>
-
-    <h2>Consistency Is the Second Problem</h2>
-    <p>Even when the first response is fast, the follow-up sequence usually falls apart. Day one: email. Day three: maybe a phone call. Day seven: nothing, because something else came up. There's no system. There's just a person trying to remember to follow up, buried under their actual job.</p>
-    <p>This isn't a people problem. It's a systems problem. And systems problems have systems solutions.</p>
-
+    <p>The probability of qualifying a lead drops dramatically after the first few minutes. Your competitors who respond in five minutes are closing deals you never got a shot at.</p>
     <h2>What Automated Follow-Up Looks Like</h2>
-    <p>Imagine this: a lead fills out your contact form at 9pm. Within two minutes, they get a personalized text message thanking them for reaching out, acknowledging what they asked about, and letting them know when they can expect a call. The next morning, they get a follow-up email with more detail. Two days later, if they haven't responded, a second touchpoint goes out — different angle, different channel. This continues for two weeks, adapting based on whether and how they engage.</p>
-    <p>Your team doesn't touch any of this until the lead responds. Then a human takes over for the conversation that matters. The automation handled the grunt work — the reminding, the nudging, the staying-top-of-mind — so your team can focus on closing.</p>
-    <p>This isn't about replacing the personal touch. It's about making sure the personal touch actually happens at the right moment, instead of three days too late.</p>
-
+    <p>A lead fills out your form at 9pm. Within two minutes, they get a personalized text. The next morning, a follow-up email. Two days later, a second touchpoint. Your team only steps in when the lead responds.</p>
     <div class="post-cta">
       <p>Losing leads to slow follow-up? Let's fix that.</p>
-      <a href="#contact" class="btn-primary" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
+      <a href="#contact" class="btn-big btn-primary-big" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
     </div>
   </div>
 </div>
@@ -785,25 +862,17 @@ footer .footer-local {
   <div class="post-date">March 4, 2026</div>
   <h1>What a Weekly Intelligence Digest Looks Like for a Local Business</h1>
   <div class="post-body">
-    <p>Most business owners I talk to on the South Shore have data everywhere and insights nowhere. There's a Google Analytics dashboard they check once a month. A CRM they half-use. A Google Business Profile with reviews they skim. A spreadsheet someone started tracking something in six months ago.</p>
-    <p>None of it talks to each other. And nobody has time to sit down, pull it all together, and figure out what it means.</p>
-    <p>That's the problem a weekly intelligence digest solves. Every Monday morning, you get a single page — clear, concise, no jargon — that tells you what happened last week, what's trending, and what to do about it.</p>
-
+    <p>Most business owners have data everywhere and insights nowhere. A weekly digest solves this. Every Monday, one page: what happened, what's trending, what to do about it.</p>
     <h2>What's Actually in the Digest</h2>
-    <p>The contents depend on what matters to your business, but here's what a typical digest covers for a local service business or restaurant:</p>
-    <p><strong>Review Summary:</strong> How many new reviews came in, what the average rating was versus last week, how fast you responded, and any themes in the feedback. If three people mentioned slow service on Friday night, that shows up here — not buried in a Google dashboard.</p>
-    <p><strong>Lead Activity:</strong> How many new inquiries came in, which channels they came from, how quickly they were followed up on, and how many converted. If your website form is generating leads but nobody's responding within the first hour, that's flagged.</p>
-    <p><strong>Customer Retention Signals:</strong> How many repeat customers came back this week versus new ones. Which loyal customers haven't visited in a while. If your top-spending customer from last quarter hasn't been in for 60 days, that's a re-engagement opportunity — and it's highlighted.</p>
-    <p><strong>Recommendations:</strong> This is the part that makes it worth reading. Based on the data, the digest includes two or three specific, actionable suggestions. Not "improve your marketing" — more like "your Tuesday lunch traffic has dropped 15% over three weeks; consider a Tuesday special or check if there's a staffing pattern change."</p>
-
+    <p><strong>Review Summary:</strong> New reviews, average rating vs. last week, response speed, complaint themes.</p>
+    <p><strong>Lead Activity:</strong> New inquiries, channels, follow-up speed, conversion rates.</p>
+    <p><strong>Customer Retention:</strong> Repeat vs. new customers. Loyal customers going dark.</p>
+    <p><strong>Recommendations:</strong> Two or three specific, actionable suggestions based on the data.</p>
     <h2>Why This Matters</h2>
-    <p>The digest isn't a report. It's a decision-making tool. It takes all the data you're already generating — reviews, leads, transactions, website visits — and turns it into something you can act on in five minutes over your Monday morning coffee.</p>
-    <p>No dashboards to log into. No spreadsheets to update. No analyst to hire. Just a clean summary, delivered to your inbox, built by a system that never forgets to check.</p>
-    <p>For most of my clients, this single automation — the Monday digest — is what keeps them on the retainer long after the initial build is done. It's the thing they'd miss most if they canceled. Because once you have clarity on what's actually happening in your business, going back to guessing feels impossible.</p>
-
+    <p>Five minutes over Monday coffee. No dashboards. No spreadsheets. No analyst to hire.</p>
     <div class="post-cta">
       <p>Want to see what a digest would look like for your business?</p>
-      <a href="#contact" class="btn-primary" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
+      <a href="#contact" class="btn-big btn-primary-big" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
     </div>
   </div>
 </div>
@@ -813,26 +882,20 @@ footer .footer-local {
   <div class="post-date">March 5, 2026</div>
   <h1>5 Signs Your Business Is Ready for Automation (And 3 Signs It's Not)</h1>
   <div class="post-body">
-    <p>Automation isn't a magic wand. I say this as someone who builds automations for a living. If the fundamentals aren't there, automation just makes your problems run faster. But when the timing is right, it's the highest-leverage investment a small business can make.</p>
-    <p>Here's how to tell which camp you're in.</p>
-
+    <p>Automation isn't a magic wand. But when the timing is right, it's the highest-leverage investment a small business can make.</p>
     <h2>Five Signs You're Ready</h2>
-    <p><strong>1. You have a process that works — it's just manual.</strong> This is the sweet spot. You know the steps. They produce results. But a human is doing them by hand, over and over, and it's eating up hours every week. That's an automation waiting to happen.</p>
-    <p><strong>2. Leads are coming in but falling through the cracks.</strong> If you're generating interest — website forms, phone calls, walk-ins — but conversion is inconsistent because follow-up is inconsistent, automation closes that gap immediately.</p>
-    <p><strong>3. You're spending money on tools you barely use.</strong> You have a CRM. You have an email platform. You have a booking system. But they're disconnected, half-configured, and nobody on your team has time to make them work together. Automation connects the dots.</p>
-    <p><strong>4. Your team is doing work that doesn't require thinking.</strong> Copy-pasting data between spreadsheets. Sending the same confirmation email fifty times a day. Manually checking for new reviews. These are tasks that shouldn't require a human brain — and automating them frees your team for the work that does.</p>
-    <p><strong>5. You have a clear bottleneck.</strong> You know exactly where things slow down. Maybe it's appointment scheduling. Maybe it's invoice follow-ups. Maybe it's responding to Google reviews. If you can point at one thing and say "this is where we lose time," that's usually where automation delivers the fastest ROI.</p>
-
+    <p><strong>1. You have a process that works — it's just manual.</strong></p>
+    <p><strong>2. Leads are falling through the cracks.</strong></p>
+    <p><strong>3. You're spending money on tools you barely use.</strong></p>
+    <p><strong>4. Your team is doing work that doesn't require thinking.</strong></p>
+    <p><strong>5. You have a clear bottleneck.</strong></p>
     <h2>Three Signs You're Not Ready Yet</h2>
-    <p><strong>1. You don't have a process to automate.</strong> If you're still figuring out the basics — how to price your services, who your customer is, what your workflow should look like — automation is premature. You need to build the system before you can automate it. I'd rather tell you this upfront than take your money.</p>
-    <p><strong>2. Your data is a disaster.</strong> Automation runs on data. If your customer records are scattered across sticky notes, text messages, and three different spreadsheets with no consistency, the first step isn't automation — it's getting organized. Sometimes I help with that too, but it's a different project.</p>
-    <p><strong>3. You're looking for a silver bullet.</strong> Automation makes good businesses more efficient. It doesn't fix broken ones. If the core product or service isn't working, no amount of automated follow-up will save it. Fix the foundation first, then scale it.</p>
-
-    <p>The honest answer is that most local businesses with a couple of employees and some kind of digital presence are ready for at least one automation. The trick is starting with the right one — the one that saves the most time or captures the most lost revenue with the least disruption. That's what the free audit is for.</p>
-
+    <p><strong>1. You don't have a process to automate.</strong> Build the system first.</p>
+    <p><strong>2. Your data is a disaster.</strong> Organize before you automate.</p>
+    <p><strong>3. You're looking for a silver bullet.</strong> Automation makes good businesses better. It doesn't fix broken ones.</p>
     <div class="post-cta">
       <p>Not sure if you're ready? That's exactly what the audit answers.</p>
-      <a href="#contact" class="btn-primary" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
+      <a href="#contact" class="btn-big btn-primary-big" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
     </div>
   </div>
 </div>
@@ -842,32 +905,18 @@ footer .footer-local {
   <div class="post-date">March 6, 2026</div>
   <h1>The Real Cost of Not Responding to a Negative Google Review</h1>
   <div class="post-body">
-    <p>A negative review sitting unanswered on your Google Business Profile isn't just a bad look. It's a compounding cost — one that grows every day it sits there, quietly steering customers to your competitors. Let's put some numbers on it.</p>
-
+    <p>A negative review sitting unanswered isn't just a bad look. It's a compounding cost.</p>
     <h2>The Direct Revenue Impact</h2>
-    <p>Research ties star ratings directly to revenue for local businesses. A one-star improvement on Google correlates with a 5-9% increase in revenue. Flip that around: if unanswered negative reviews are dragging your rating down, you're leaving real money on the table.</p>
-    <p>Take a local restaurant on the South Shore doing $500,000 a year. If their rating sits at 3.8 instead of 4.3 because they've got a string of unaddressed complaints, the revenue gap could be $25,000-$45,000 annually. That's the customer who Googled "best restaurant near Duxbury," saw 3.8 stars, and kept scrolling.</p>
-
+    <p>A one-star improvement correlates with 5-9% revenue increase. If your rating sits at 3.8 instead of 4.3, a $500K business could be losing $25,000-$45,000 annually.</p>
     <h2>The Compounding Effect</h2>
-    <p>Here's what makes it worse: unanswered negative reviews discourage positive ones. When a happy customer sees that complaints go ignored, they're less likely to leave their own review. Why bother? Meanwhile, unhappy customers are always motivated to write. The result is a slow, steady drift downward in your overall rating.</p>
-    <p>And every review that goes unanswered sends the same message to every potential customer who reads it: "This business doesn't listen." In a market like the South Shore where word of mouth still drives most local business, that reputation bleeds into real-world conversations too.</p>
-
-    <h2>The Competitor Advantage</h2>
-    <p>Think about what happens when your competitor down the street does respond to their reviews — quickly, personally, and consistently. A potential customer is comparing you side by side. Same service, same price range, similar ratings. But one business engages with their customers. The other doesn't. The majority of consumers choose the business that responds first.</p>
-    <p>You're not just losing the customer who read the bad review. You're losing every customer who compared you to someone who looked like they cared more.</p>
-
+    <p>Unanswered negatives discourage positive reviews. Happy customers see complaints ignored and don't bother leaving theirs. The result: a slow drift downward.</p>
     <h2>The Recovery Opportunity</h2>
-    <p>Here's the part that makes this fixable: a well-handled negative review can actually build trust. When a future customer sees a one-star review followed by a thoughtful, non-defensive response that acknowledges the issue and offers to make it right — that's powerful. It shows accountability. It shows the business is run by real people who give a damn.</p>
-    <p>The response doesn't need to be perfect. It needs to be fast, genuine, and specific. Acknowledge what happened. Don't make excuses. Offer a path forward.</p>
-
+    <p>A well-handled negative review builds trust. A thoughtful response shows accountability and shows the business is run by people who care.</p>
     <h2>The Math on Automation</h2>
-    <p>A review response system costs a few hundred dollars a month, all-in. And if it helps you recover even a fraction of the revenue gap caused by a lower rating — even $2,000-$3,000 a month in customers who chose you instead of scrolling past — the ROI isn't close. It's an order of magnitude.</p>
-    <p>And that's before the weekly intelligence digest that spots complaint patterns early, the faster response times that improve your rating over time, and the operational data you get from actually reading and analyzing what your customers are telling you.</p>
-    <p>Every unanswered negative review has a price tag. Most businesses just never calculate it.</p>
-
+    <p>A review response system costs a few hundred a month. If it recovers even $2,000-$3,000 in customers who chose you instead of scrolling past, the ROI isn't close.</p>
     <div class="post-cta">
       <p>Want to know what unanswered reviews are costing your business?</p>
-      <a href="#contact" class="btn-primary" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
+      <a href="#contact" class="btn-big btn-primary-big" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
     </div>
   </div>
 </div>
@@ -877,31 +926,18 @@ footer .footer-local {
   <div class="post-date">March 6, 2026</div>
   <h1>You Don't Need More Customers. You Need to Keep the Ones You Have.</h1>
   <div class="post-body">
-    <p>Every local business owner I talk to wants the same thing: more customers. More foot traffic. More leads. More bookings. And that makes sense — growth feels like progress. But here's the part nobody talks about at the chamber of commerce meeting: most businesses are hemorrhaging existing customers while pouring money into finding new ones.</p>
-    <p>It costs roughly five times more to acquire a new customer than to retain an existing one. That's not a rough estimate — it's one of the most replicated findings in business research. Yet most small businesses on the South Shore spend the vast majority of their marketing budget on acquisition and almost nothing on retention.</p>
-
+    <p>Every local business owner wants more customers. But most are hemorrhaging existing ones while pouring money into finding new ones.</p>
     <h2>The Leaky Bucket</h2>
-    <p>Think of your customer base as a bucket. Acquisition is the water going in. Retention is the hole in the bottom. You can run the faucet harder — more ads, more promotions, more networking events — but if the bucket is leaking, you're just running faster to stay in place.</p>
-    <p>The leak usually isn't dramatic. It's not customers storming out angry. It's the slow drift. The regular who used to come in every Tuesday and hasn't been in for two months. The client who booked quarterly appointments and just... stopped. They didn't leave for a competitor. They forgot about you. Life got busy. Nobody reached out.</p>
-    <p>That's the gap. Not a service problem. A systems problem.</p>
-
+    <p>It costs 5x more to acquire than retain. The leak isn't dramatic — it's the slow drift. The regular who hasn't been in for two months. Nobody reached out.</p>
     <h2>What Retention Actually Looks Like</h2>
-    <p>Retention isn't loyalty cards and birthday emails — though those don't hurt. Real retention is knowing when a customer's behavior changes and acting on it before they're gone for good.</p>
-    <p>It means flagging a high-value customer who hasn't visited in 60 days and triggering a personalized check-in. It means recognizing that a client who used to book monthly has gone 45 days without an appointment and sending them a "we miss you" message that references their actual history — not a generic blast. It means identifying your top 20% of customers by lifetime value and making sure they feel it.</p>
-    <p>No human can track this manually across hundreds or thousands of customers. But a system can. And it can do it every single day without getting distracted, going on vacation, or forgetting to follow up.</p>
-
+    <p>Flagging a high-value customer who hasn't visited in 60 days. Sending a personalized check-in that references their actual history. No human can track this across hundreds of customers. A system can.</p>
     <h2>The Revenue Math</h2>
-    <p>Increasing customer retention by just 5% can increase profits by 25-95%, depending on the industry. For a local service business or restaurant, even the conservative end of that range is transformative.</p>
-    <p>Here's why: retained customers spend more over time. They refer friends. They're less price-sensitive. They cost almost nothing to market to because they already know and trust you. Every dollar spent keeping them is worth multiples of what you'd spend finding someone new.</p>
-    <p>A South Shore restaurant doing $600,000 a year that reduces customer churn by 10% might see $30,000-$60,000 in additional annual revenue — not from a single new customer walking in, but from the ones who almost walked away and didn't.</p>
-
+    <p>A 5% increase in retention can boost profits 25-95%. A South Shore restaurant doing $600K that reduces churn by 10% could see $30,000-$60,000 in additional annual revenue.</p>
     <h2>Why This Doesn't Happen</h2>
-    <p>It's not that business owners don't care about retention. It's that retention is invisible work. Nobody notices the customer who almost left but got a well-timed win-back message. There's no ribbon-cutting for "we kept our regulars." The work is quiet, behind the scenes, and easy to deprioritize when there are a hundred louder things demanding attention.</p>
-    <p>That's exactly why it's the perfect candidate for automation. The system watches. It flags. It acts. And it does it consistently, every single day, across every customer in your database. Your team stays focused on the people in front of them. The automation handles the ones who aren't there yet.</p>
-
+    <p>Retention is invisible work. That's exactly why it's the perfect candidate for automation. The system watches. It flags. It acts. Every day, across every customer.</p>
     <div class="post-cta">
       <p>Want to see how many customers you're quietly losing?</p>
-      <a href="#contact" class="btn-primary" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
+      <a href="#contact" class="btn-big btn-primary-big" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
     </div>
   </div>
 </div>
@@ -934,7 +970,7 @@ window.addEventListener('popstate', () => {
   if (hash.startsWith('post')) showPost(hash);
   else showMain();
 });
-// Phone number rendered via JS to prevent bot scraping
+// Phone number - bot protected
 (function(){var e=document.getElementById('cNum');if(e){var s=document.createElement('span');s.style.color='var(--accent)';s.style.fontWeight='600';s.innerHTML='three-zero-one \u00b7 437 \u00b7 6343';e.appendChild(s)}})();
 </script>
 </body>
