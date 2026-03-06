@@ -15,7 +15,7 @@
   --bg-card: rgba(255,255,255,0.04);
   --bg-card-hover: rgba(255,255,255,0.07);
   --text: #E8E4DD;
-  --text-dim: #8A8680;
+  --text-dim: #A8A49E;
   --text-bright: #FFFFFF;
   --accent: #FF6B35;
   --accent-glow: rgba(255,107,53,0.3);
@@ -35,7 +35,7 @@
 html { scroll-behavior: smooth; text-wrap: pretty; }
 body {
   font-family: var(--sans); background: var(--bg); color: var(--text);
-  line-height: 1.7; font-size: 16px; overflow-x: hidden;
+  line-height: 1.8; font-size: 18px; overflow-x: hidden;
 }
 a { color: var(--accent); text-decoration: none; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 32px; }
@@ -63,7 +63,7 @@ nav {
 }
 .nav-brand span { background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .nav-links { display: flex; gap: 32px; align-items: center; }
-.nav-links a { color: var(--text-dim); font-size: 14px; font-weight: 500; transition: color 0.3s; }
+.nav-links a { color: var(--text-dim); font-size: 16px; font-weight: 500; transition: color 0.3s; }
 .nav-links a:hover { color: var(--text-bright); }
 .nav-cta {
   background: var(--gradient-hero) !important; color: #fff !important;
@@ -131,8 +131,8 @@ nav {
   background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 .hero-sub {
-  font-size: 20px; color: var(--text-dim); max-width: 600px; margin: 0 auto 48px;
-  line-height: 1.6;
+  font-size: 22px; color: var(--text-dim); max-width: 650px; margin: 0 auto 48px;
+  line-height: 1.7;
 }
 .hero-cta-group { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 .btn-big {
@@ -155,12 +155,12 @@ nav {
 .marquee-track {
   display: flex; gap: 80px; animation: marquee 30s linear infinite; width: max-content;
 }
-.marquee-item { display: flex; align-items: center; gap: 16px; white-space: nowrap; }
+.marquee-item { display: flex; flex-direction: row; align-items: center; gap: 16px; white-space: nowrap; flex-shrink: 0; }
 .marquee-num {
-  font-family: var(--serif); font-size: 48px; font-weight: 700;
+  font-family: var(--serif); font-size: 48px; font-weight: 700; flex-shrink: 0; line-height: 1;
   background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.marquee-label { font-size: 14px; color: var(--text-dim); max-width: 160px; line-height: 1.4; }
+.marquee-label { font-size: 16px; color: var(--text-dim); max-width: 220px; line-height: 1.4; white-space: normal; }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* SVG ILLUSTRATIONS */
@@ -179,7 +179,7 @@ nav {
   font-weight: 700; line-height: 1.1; color: var(--text-bright);
   margin-bottom: 20px; letter-spacing: -1px;
 }
-.illo-text p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 16px; }
+.illo-text p { font-size: 19px; color: var(--text-dim); line-height: 1.85; margin-bottom: 18px; }
 .illo-art { position: relative; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; }
 .illo-art svg { width: 100%; height: auto; }
 
@@ -191,7 +191,7 @@ nav {
   font-weight: 700; color: var(--text-bright); letter-spacing: -1.5px;
 }
 .bento-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto auto; gap: 16px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
 }
 .bento-card {
   background: var(--bg-card); border: 1px solid var(--border);
@@ -199,8 +199,14 @@ nav {
 }
 .bento-card:hover { background: var(--bg-card-hover); border-color: rgba(255,255,255,0.15); transform: translateY(-4px); }
 .bento-card.featured {
-  grid-column: span 2; background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(123,97,255,0.08));
+  background: linear-gradient(135deg, rgba(255,107,53,0.08), rgba(123,97,255,0.08));
   border-color: rgba(255,107,53,0.2);
+}
+.bento-card.full-row {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(0,212,170,0.06), rgba(123,97,255,0.06));
+  border-color: rgba(0,212,170,0.2);
+  display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;
 }
 .bento-icon {
   width: 56px; height: 56px; border-radius: 16px; display: flex;
@@ -209,9 +215,9 @@ nav {
 .bento-icon.orange { background: rgba(255,107,53,0.12); }
 .bento-icon.purple { background: rgba(123,97,255,0.12); }
 .bento-icon.teal { background: rgba(0,212,170,0.12); }
-.bento-card h3 { font-size: 20px; font-weight: 700; color: var(--text-bright); margin-bottom: 10px; }
-.bento-card p { font-size: 15px; color: var(--text-dim); line-height: 1.7; }
-.bento-tag { display: inline-block; margin-top: 16px; padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 600; }
+.bento-card h3 { font-size: 22px; font-weight: 700; color: var(--text-bright); margin-bottom: 12px; }
+.bento-card p { font-size: 17px; color: var(--text-dim); line-height: 1.75; }
+.bento-tag { display: inline-block; margin-top: 16px; padding: 6px 16px; border-radius: 100px; font-size: 14px; font-weight: 600; }
 .bento-tag.orange { background: rgba(255,107,53,0.1); color: var(--accent); }
 .bento-tag.purple { background: rgba(123,97,255,0.1); color: var(--accent2); }
 .bento-tag.teal { background: rgba(0,212,170,0.1); color: var(--accent3); }
@@ -234,12 +240,12 @@ nav {
   position: absolute; left: -53px; top: 0; width: 24px; height: 24px;
   display: flex; align-items: center; justify-content: center;
 }
-.timeline-step h3 { font-size: 24px; font-weight: 700; color: var(--text-bright); margin-bottom: 8px; }
-.timeline-step .step-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px; }
+.timeline-step h3 { font-size: 26px; font-weight: 700; color: var(--text-bright); margin-bottom: 10px; }
+.timeline-step .step-label { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 10px; }
 .timeline-step:nth-child(1) .step-label { color: var(--accent); }
 .timeline-step:nth-child(2) .step-label { color: var(--accent2); }
 .timeline-step:nth-child(3) .step-label { color: var(--accent3); }
-.timeline-step p { font-size: 16px; color: var(--text-dim); line-height: 1.7; }
+.timeline-step p { font-size: 18px; color: var(--text-dim); line-height: 1.8; }
 
 /* ABOUT */
 .about-section { padding: 120px 0; border-top: 1px solid var(--border); }
@@ -248,11 +254,11 @@ nav {
   font-family: var(--serif); font-size: clamp(32px, 4vw, 48px);
   font-weight: 700; line-height: 1.1; color: var(--text-bright); margin-bottom: 24px; letter-spacing: -1px;
 }
-.about-grid p { font-size: 17px; color: var(--text-dim); line-height: 1.8; margin-bottom: 16px; }
+.about-grid p { font-size: 19px; color: var(--text-dim); line-height: 1.85; margin-bottom: 18px; }
 .about-traits { list-style: none; margin-top: 32px; }
 .about-traits li {
-  padding: 16px 0; border-bottom: 1px solid var(--border);
-  font-size: 15px; color: var(--text); display: flex; align-items: center; gap: 14px;
+  padding: 18px 0; border-bottom: 1px solid var(--border);
+  font-size: 17px; color: var(--text); display: flex; align-items: center; gap: 14px;
 }
 .trait-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
 .trait-dot.o { background: var(--accent); }
@@ -274,7 +280,7 @@ nav {
 }
 .pricing-pills { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
 .pricing-pill {
-  padding: 12px 24px; border-radius: 100px; font-size: 14px;
+  padding: 14px 28px; border-radius: 100px; font-size: 16px;
   background: var(--bg-card); border: 1px solid var(--border); color: var(--text);
 }
 
@@ -288,11 +294,11 @@ nav {
 .faq-list { max-width: 700px; margin: 0 auto; }
 .faq-item { border-bottom: 1px solid var(--border); padding: 24px 0; cursor: pointer; }
 .faq-question {
-  font-size: 17px; font-weight: 600; display: flex;
+  font-size: 19px; font-weight: 600; display: flex;
   justify-content: space-between; align-items: center; color: var(--text-bright);
 }
 .faq-answer {
-  font-size: 15px; color: var(--text-dim); line-height: 1.75;
+  font-size: 17px; color: var(--text-dim); line-height: 1.8;
   max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease;
 }
 .faq-item.open .faq-answer { max-height: 300px; padding-top: 14px; }
@@ -325,13 +331,13 @@ nav {
 .blog-card:hover::before { opacity: 1; }
 .blog-date { font-size: 12px; color: var(--text-dim); font-weight: 500; margin-bottom: 12px; }
 .blog-card h3 {
-  font-family: var(--serif); font-size: 18px; font-weight: 700;
-  margin-bottom: 10px; line-height: 1.3; color: var(--text-bright);
+  font-family: var(--serif); font-size: 20px; font-weight: 700;
+  margin-bottom: 12px; line-height: 1.35; color: var(--text-bright);
 }
-.blog-card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+.blog-card p { font-size: 16px; color: var(--text-dim); line-height: 1.7; }
 .blog-tag {
-  display: inline-block; padding: 4px 12px; border-radius: 100px;
-  font-size: 11px; font-weight: 600; margin-top: 16px;
+  display: inline-block; padding: 5px 14px; border-radius: 100px;
+  font-size: 13px; font-weight: 600; margin-top: 16px;
   background: rgba(255,107,53,0.1); color: var(--accent);
 }
 
@@ -344,7 +350,7 @@ nav {
   font-family: var(--serif); font-size: clamp(36px, 5vw, 56px);
   font-weight: 700; color: var(--text-bright); letter-spacing: -1.5px; margin-bottom: 12px;
 }
-.contact-section .sub { font-size: 17px; color: var(--text-dim); margin-bottom: 48px; }
+.contact-section .sub { font-size: 19px; color: var(--text-dim); margin-bottom: 48px; }
 .contact-form { max-width: 560px; margin: 0 auto; text-align: left; }
 .form-group { margin-bottom: 16px; }
 .form-group label {
@@ -352,9 +358,9 @@ nav {
   margin-bottom: 6px; letter-spacing: 0.5px;
 }
 .form-group input, .form-group textarea {
-  width: 100%; padding: 16px 18px; background: var(--bg-card);
+  width: 100%; padding: 18px 20px; background: var(--bg-card);
   border: 1px solid var(--border); border-radius: 12px; color: var(--text);
-  font-family: var(--sans); font-size: 15px; transition: border 0.3s;
+  font-family: var(--sans); font-size: 17px; transition: border 0.3s;
 }
 .form-group input:focus, .form-group textarea:focus { outline: none; border-color: var(--accent); }
 .form-group textarea { resize: vertical; min-height: 100px; }
@@ -369,9 +375,9 @@ nav {
 
 /* FOOTER */
 footer { padding: 48px 0; border-top: 1px solid var(--border); text-align: center; }
-footer p { font-size: 13px; color: var(--text-dim); }
+footer p { font-size: 15px; color: var(--text-dim); }
 footer .footer-local {
-  font-size: 14px; font-weight: 500; margin-bottom: 8px;
+  font-size: 16px; font-weight: 500; margin-bottom: 8px;
   background: var(--gradient-hero); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
 
@@ -395,7 +401,7 @@ footer .footer-local {
   font-family: var(--serif); color: var(--text-bright); font-size: 28px;
   font-weight: 700; margin: 48px 0 18px; letter-spacing: -0.5px;
 }
-.blog-post-view .post-body p { margin-bottom: 20px; line-height: 1.85; font-size: 16px; }
+.blog-post-view .post-body p { margin-bottom: 22px; line-height: 1.9; font-size: 18px; }
 .blog-post-view .post-body strong { color: var(--text); }
 .blog-post-view .post-cta {
   margin-top: 56px; padding: 40px; background: var(--bg-card);
@@ -408,7 +414,7 @@ footer .footer-local {
   .illo-grid, .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .illo-grid.reverse { direction: ltr; }
   .bento-grid { grid-template-columns: 1fr; }
-  .bento-card.featured { grid-column: span 1; }
+  .bento-card.full-row { grid-template-columns: 1fr; }
   .blog-grid { grid-template-columns: 1fr; }
   .hero-robot { display: none; }
 }
@@ -433,7 +439,7 @@ footer .footer-local {
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" onclick="showMain(); return false;" class="nav-brand" style="text-decoration:none;"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" style="vertical-align:middle;margin-right:8px;"><circle cx="14" cy="14" r="13" stroke="url(#nav-g)" stroke-width="1.5" fill="none"/><circle cx="10" cy="12" r="2" fill="#FF6B35"/><circle cx="18" cy="12" r="2" fill="#7B61FF"/><path d="M9 19 Q14 22 19 19" stroke="#00D4AA" stroke-width="1.5" fill="none" stroke-linecap="round"/><rect x="11" y="1" width="6" height="4" rx="2" fill="rgba(255,255,255,0.15)"/><line x1="14" y1="5" x2="14" y2="1" stroke="rgba(255,255,255,0.2)" stroke-width="1"/><defs><linearGradient id="nav-g" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#FF6B35"/><stop offset="1" stop-color="#7B61FF"/></linearGradient></defs></svg><span>AI Architect</span></a>
+    <a href="#" onclick="showMain(); return false;" class="nav-brand" style="text-decoration:none;"><span>AI Architect</span></a>
     <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
     <div class="nav-links">
       <a href="#services" onclick="showMain(); return false;">Services</a>
@@ -508,8 +514,10 @@ footer .footer-local {
             <animate attributeName="width" values="0;80;0" dur="3s" repeatCount="indefinite"/>
           </rect>
           <!-- Arms -->
-          <rect x="8" y="118" width="18" height="50" rx="9" fill="rgba(123,97,255,0.06)" stroke="rgba(123,97,255,0.2)" stroke-width="1"/>
-          <rect x="154" y="118" width="18" height="50" rx="9" fill="rgba(0,212,170,0.06)" stroke="rgba(0,212,170,0.2)" stroke-width="1"/>
+          <rect x="8" y="118" width="20" height="55" rx="10" fill="rgba(123,97,255,0.12)" stroke="rgba(123,97,255,0.4)" stroke-width="1.5"/>
+          <circle cx="18" cy="178" r="8" fill="rgba(123,97,255,0.1)" stroke="rgba(123,97,255,0.35)" stroke-width="1.5"/>
+          <rect x="152" y="118" width="20" height="55" rx="10" fill="rgba(0,212,170,0.12)" stroke="rgba(0,212,170,0.4)" stroke-width="1.5"/>
+          <circle cx="162" cy="178" r="8" fill="rgba(0,212,170,0.1)" stroke="rgba(0,212,170,0.35)" stroke-width="1.5"/>
           <!-- Neck -->
           <rect x="75" y="100" width="30" height="12" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
           <defs><linearGradient id="g1h" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#FF3CAC"/></linearGradient></defs>
@@ -591,7 +599,10 @@ footer .footer-local {
           <rect x="258" y="195" width="12" height="12" rx="2" fill="#00D4AA" opacity="0.5">
             <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.5s" begin="0.6s" repeatCount="indefinite"/>
           </rect>
-          <!-- Robot arm reaching to review card -->
+          <!-- Robot left arm -->
+          <path d="M190 200 Q150 200 130 240 Q115 270 130 290" stroke="url(#g1)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="130" cy="295" r="8" fill="rgba(255,107,53,0.15)" stroke="#FF6B35" stroke-width="1.5"/>
+          <!-- Robot right arm reaching to review card -->
           <path d="M310 200 Q350 200 370 240 Q385 270 370 290" stroke="url(#g2)" stroke-width="3" fill="none" stroke-linecap="round"/>
           <circle cx="370" cy="295" r="8" fill="rgba(0,212,170,0.15)" stroke="#00D4AA" stroke-width="1.5"/>
           <!-- Review cards being processed -->
@@ -728,7 +739,7 @@ footer .footer-local {
       <div class="bento-card featured">
         <div class="bento-icon orange"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="6" y="10" width="20" height="16" rx="4" stroke="#FF6B35" stroke-width="1.5" fill="rgba(255,107,53,0.1)"/><circle cx="12" cy="18" r="2.5" fill="#FF6B35"/><circle cx="20" cy="18" r="2.5" fill="#FF6B35"/><rect x="10" y="23" width="12" height="2" rx="1" fill="#FF6B35" opacity="0.5"/><line x1="16" y1="10" x2="16" y2="5" stroke="#FF6B35" stroke-width="1.5"/><circle cx="16" cy="4" r="2" fill="#FF6B35"/><rect x="4" y="16" width="3" height="6" rx="1.5" fill="rgba(255,107,53,0.3)"/><rect x="25" y="16" width="3" height="6" rx="1.5" fill="rgba(255,107,53,0.3)"/></svg></div>
         <h3>Review Response Agent</h3>
-        <p>AI monitors your Google Business Profile 24/7. Positive reviews get instant personalized replies. Negatives get a draft sent to your phone. Monday digest shows trends and complaint themes.</p>
+        <p>AI monitors Google 24/7. Positives get instant personalized replies. Negatives get a draft to your phone. Monday digest with trends.</p>
         <span class="bento-tag orange">Most Popular</span>
       </div>
       <div class="bento-card">
@@ -749,10 +760,10 @@ footer .footer-local {
         <p>Audit, clean, and automate your CRM — tagging, lifecycle updates, and triggered comms.</p>
         <span class="bento-tag purple">Foundation</span>
       </div>
-      <div class="bento-card featured">
+      <div class="bento-card">
         <div class="bento-icon teal"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="8" width="24" height="18" rx="3" stroke="#00D4AA" stroke-width="1.5" fill="rgba(0,212,170,0.06)"/><path d="M8 20 L12 14 L16 18 L22 10 L26 14" stroke="#00D4AA" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="22" cy="10" r="2" fill="#00D4AA"/><line x1="16" y1="4" x2="16" y2="8" stroke="#00D4AA" stroke-width="1.5"/><circle cx="16" cy="3" r="1.5" fill="#00D4AA" opacity="0.6"/><rect x="8" y="2" width="16" height="3" rx="1.5" fill="rgba(0,212,170,0.15)" stroke="rgba(0,212,170,0.3)" stroke-width="0.5"/></svg></div>
         <h3>Weekly Business Digest</h3>
-        <p>Every Monday: one page, plain English. Key metrics, trends, anomalies, and what to do about them. Pulled from your reviews, CRM, website, and sales data. No dashboards to learn.</p>
+        <p>Every Monday: one page, plain English. Key metrics, trends, anomalies, and what to do about them. No dashboards to learn.</p>
         <span class="bento-tag teal">Intelligence</span>
       </div>
       <div class="bento-card">
@@ -760,6 +771,14 @@ footer .footer-local {
         <h3>Booking &amp; No-Shows</h3>
         <p>Scheduling, confirmations, reminders, and no-show follow-ups — all integrated and automated.</p>
         <span class="bento-tag orange">Operations</span>
+      </div>
+      <div class="bento-card full-row">
+        <div class="bento-icon orange" style="margin-bottom:0;"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect x="4" y="6" width="24" height="20" rx="4" stroke="#FF6B35" stroke-width="1.5" fill="rgba(255,107,53,0.06)"/><circle cx="12" cy="14" r="3" fill="none" stroke="#FF6B35" stroke-width="1.5"/><circle cx="12" cy="14" r="1" fill="#FF6B35"/><circle cx="20" cy="14" r="3" fill="none" stroke="#7B61FF" stroke-width="1.5"/><circle cx="20" cy="14" r="1" fill="#7B61FF"/><path d="M8 22 Q16 18 24 22" stroke="#00D4AA" stroke-width="1.5" fill="none"/><line x1="16" y1="2" x2="16" y2="6" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/><circle cx="16" cy="1.5" r="1.5" fill="#FF6B35"/></svg></div>
+        <div>
+          <h3>Custom AI Agent — Built for Your Workflow</h3>
+          <p>Got a process that's eating up hours every week? I'll design a custom AI agent that handles it end-to-end. Data entry, report generation, customer routing, internal ops — if it's repetitive, it's automatable.</p>
+          <span class="bento-tag orange">Custom Build</span>
+        </div>
       </div>
     </div>
   </div>
