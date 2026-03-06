@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wes Lowenfeld — AI Automation Architect | Duxbury, MA | South Shore</title>
+<title>AI Automation Architect | Duxbury, MA | South Shore</title>
 <meta name="description" content="Custom AI-powered automations for South Shore businesses. CRM, reviews, lead follow-up, and retention — built by a Duxbury local who knows your market.">
-<meta property="og:title" content="Wes Lowenfeld — AI Automation for South Shore Businesses">
+<meta property="og:title" content="AI Automation for South Shore Businesses">
 <meta property="og:description" content="I build the systems that run your business while you sleep. Based in Duxbury, serving the South Shore and greater Boston.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,7 +36,7 @@
   --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; text-wrap: pretty; }
 body {
   font-family: var(--sans);
   background: var(--bg);
@@ -411,7 +411,7 @@ footer .footer-local {
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" onclick="showMain(); return false;" class="nav-brand" style="text-decoration:none;">Wes Lowenfeld</a>
+    <a href="#" onclick="showMain(); return false;" class="nav-brand" style="text-decoration:none;">Wes</a>
     <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
     <div class="nav-links">
       <a href="#services" onclick="showMain(); return false;">Services</a>
@@ -440,7 +440,7 @@ footer .footer-local {
         <p class="hero-sub">30 minutes. No cost. Walk away with a clear plan either way.</p>
       </div>
       <div class="hero-right">
-        <h3>The gap most local businesses don't see</h3>
+        <h3>The gap most local businesses&nbsp;don't&nbsp;see</h3>
         <div class="hero-stat-row">
           <div class="hero-stat">
             <div class="hero-stat-num">87%</div>
@@ -475,7 +475,7 @@ footer .footer-local {
         <div class="section-label">Who I Am</div>
         <h2 class="section-title">Local. Hands-on.<br>No middlemen.</h2>
         <div class="about-text">
-          <p>I'm Wes Lowenfeld. I live in Duxbury with my family, and I work with businesses I can actually walk into. No Zoom-only relationships. No offshore team. When you hire me, you get me.</p>
+          <p>I'm Wes. I live in Duxbury with my family, and I work with businesses I can actually walk into. No Zoom-only relationships. No offshore team. When you hire me, you get me.</p>
           <p>My background is in CRM strategy, customer retention systems, and marketing automation. I've spent years designing the systems that turn messy operations into machines that run themselves. Now I build them for South Shore businesses — restaurants, service companies, medical practices, retail shops, and anyone else who's tired of losing time to work a computer should be handling.</p>
         </div>
         <div class="about-local-callout">
@@ -580,7 +580,7 @@ footer .footer-local {
       <li>Setup fee covers the build. Monthly retainer covers support.</li>
       <li>ROI-first: I only build things that pay for themselves</li>
       <li>Most clients see full ROI within the first 30 days</li>
-      <li>If the automation isn't delivering, we part ways. No hard feelings.</li>
+      <li>If the automation isn't delivering, we part ways. No hard&nbsp;feelings.</li>
     </ul>
     <div class="pricing-cta">
       <a href="#contact" class="btn-light">Let's Talk Numbers</a>
@@ -695,7 +695,7 @@ footer .footer-local {
         <textarea id="pain" name="pain" placeholder="Tell me about the tasks you wish you could hand off..."></textarea>
       </div>
       <button type="submit" class="submit-btn">Request My Free Audit</button>
-      <p style="text-align:center; margin-top:12px; font-size:13px; color:var(--text-light);">Or just text me — I'll get back to you the same day.</p>
+      <p style="text-align:center; margin-top:12px; font-size:13px; color:var(--text-light);">Or just text me at <span id="cNum"></span> — I'll get back to you the&nbsp;same&nbsp;day.</p>
     </form>
   </div>
 </section>
@@ -703,7 +703,7 @@ footer .footer-local {
 <footer>
   <div class="container">
     <p class="footer-local">Proudly serving Duxbury, Marshfield, Plymouth, Hingham, Scituate &amp; the South Shore</p>
-    <p>&copy; 2026 Wes Lowenfeld. All rights reserved.</p>
+    <p>&copy; 2026 All rights reserved.</p>
   </div>
 </footer>
 
@@ -894,6 +894,8 @@ window.addEventListener('popstate', () => {
   if (hash.startsWith('post')) showPost(hash);
   else showMain();
 });
+// Phone number rendered via JS to prevent bot scraping
+(function(){var p=['(','7','8','1',')',' ','2','6','4','-','8','0','2','6'];var e=document.getElementById('cNum');if(e){var a=document.createElement('a');a.href='tel:'+p.filter(function(c){return/\d/.test(c)}).join('');a.textContent=p.join('');a.style.color='var(--accent)';a.style.fontWeight='600';e.appendChild(a)}})();
 </script>
 </body>
 </html>
