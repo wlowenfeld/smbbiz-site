@@ -659,6 +659,12 @@ footer .footer-local {
         <p>It's not just about feelings. There's a dollar amount attached to every unanswered review.</p>
         <div class="blog-tag">Reviews</div>
       </div>
+      <div class="blog-card" onclick="showPost('post6')">
+        <div class="blog-date">March 6, 2026</div>
+        <h3>You Don't Need More Customers. You Need to Keep the Ones You Have.</h3>
+        <p>Acquisition gets the glory. Retention pays the bills. Here's the math most local businesses never run.</p>
+        <div class="blog-tag">Retention</div>
+      </div>
     </div>
   </div>
 </section>
@@ -866,6 +872,40 @@ footer .footer-local {
   </div>
 </div>
 
+<div class="blog-post-view" id="post6">
+  <div class="blog-back" onclick="showMain()">&#8592; Back to Home</div>
+  <div class="post-date">March 6, 2026</div>
+  <h1>You Don't Need More Customers. You Need to Keep the Ones You Have.</h1>
+  <div class="post-body">
+    <p>Every local business owner I talk to wants the same thing: more customers. More foot traffic. More leads. More bookings. And that makes sense — growth feels like progress. But here's the part nobody talks about at the chamber of commerce meeting: most businesses are hemorrhaging existing customers while pouring money into finding new ones.</p>
+    <p>It costs roughly five times more to acquire a new customer than to retain an existing one. That's not a rough estimate — it's one of the most replicated findings in business research. Yet most small businesses on the South Shore spend the vast majority of their marketing budget on acquisition and almost nothing on retention.</p>
+
+    <h2>The Leaky Bucket</h2>
+    <p>Think of your customer base as a bucket. Acquisition is the water going in. Retention is the hole in the bottom. You can run the faucet harder — more ads, more promotions, more networking events — but if the bucket is leaking, you're just running faster to stay in place.</p>
+    <p>The leak usually isn't dramatic. It's not customers storming out angry. It's the slow drift. The regular who used to come in every Tuesday and hasn't been in for two months. The client who booked quarterly appointments and just... stopped. They didn't leave for a competitor. They forgot about you. Life got busy. Nobody reached out.</p>
+    <p>That's the gap. Not a service problem. A systems problem.</p>
+
+    <h2>What Retention Actually Looks Like</h2>
+    <p>Retention isn't loyalty cards and birthday emails — though those don't hurt. Real retention is knowing when a customer's behavior changes and acting on it before they're gone for good.</p>
+    <p>It means flagging a high-value customer who hasn't visited in 60 days and triggering a personalized check-in. It means recognizing that a client who used to book monthly has gone 45 days without an appointment and sending them a "we miss you" message that references their actual history — not a generic blast. It means identifying your top 20% of customers by lifetime value and making sure they feel it.</p>
+    <p>No human can track this manually across hundreds or thousands of customers. But a system can. And it can do it every single day without getting distracted, going on vacation, or forgetting to follow up.</p>
+
+    <h2>The Revenue Math</h2>
+    <p>Increasing customer retention by just 5% can increase profits by 25-95%, depending on the industry. For a local service business or restaurant, even the conservative end of that range is transformative.</p>
+    <p>Here's why: retained customers spend more over time. They refer friends. They're less price-sensitive. They cost almost nothing to market to because they already know and trust you. Every dollar spent keeping them is worth multiples of what you'd spend finding someone new.</p>
+    <p>A South Shore restaurant doing $600,000 a year that reduces customer churn by 10% might see $30,000-$60,000 in additional annual revenue — not from a single new customer walking in, but from the ones who almost walked away and didn't.</p>
+
+    <h2>Why This Doesn't Happen</h2>
+    <p>It's not that business owners don't care about retention. It's that retention is invisible work. Nobody notices the customer who almost left but got a well-timed win-back message. There's no ribbon-cutting for "we kept our regulars." The work is quiet, behind the scenes, and easy to deprioritize when there are a hundred louder things demanding attention.</p>
+    <p>That's exactly why it's the perfect candidate for automation. The system watches. It flags. It acts. And it does it consistently, every single day, across every customer in your database. Your team stays focused on the people in front of them. The automation handles the ones who aren't there yet.</p>
+
+    <div class="post-cta">
+      <p>Want to see how many customers you're quietly losing?</p>
+      <a href="#contact" class="btn-primary" onclick="showMain(); setTimeout(()=>document.getElementById('contact').scrollIntoView({behavior:'smooth'}),100);">Book a Free Audit</a>
+    </div>
+  </div>
+</div>
+
 <script>
 function showPost(id) {
   document.getElementById('mainContent').style.display = 'none';
@@ -895,7 +935,7 @@ window.addEventListener('popstate', () => {
   else showMain();
 });
 // Phone number rendered via JS to prevent bot scraping
-(function(){var d=[3,0,1],s='-',d2=[4,3,7],d3=[6,3,4,3];var e=document.getElementById('cNum');if(e){var n='('+d.join('')+') '+d2.join('')+s+d3.join('');var r=d.join('')+d2.join('')+d3.join('');var a=document.createElement('a');a.href='te'+'l:'+r;a.textContent=n;a.style.color='var(--accent)';a.style.fontWeight='600';e.appendChild(a)}})();
+(function(){var e=document.getElementById('cNum');if(e){var s=document.createElement('span');s.style.color='var(--accent)';s.style.fontWeight='600';s.innerHTML='three-zero-one \u00b7 437 \u00b7 6343';e.appendChild(s)}})();
 </script>
 </body>
 </html>
