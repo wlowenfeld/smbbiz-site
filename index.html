@@ -120,14 +120,14 @@ nav {
 }
 .hero-right h3 {
   font-family: var(--serif); font-size: 22px; font-weight: 400;
-  margin-bottom: 24px; color: #fff;
+  margin-bottom: 24px; color: #fff; max-width: 100%;
 }
 .hero-stat-row {
-  display: flex; gap: 24px; margin-bottom: 20px; flex-wrap: wrap;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;
 }
 .hero-stat {
-  flex: 1; min-width: 100px; text-align: center;
-  padding: 16px 8px; background: rgba(255,255,255,0.06);
+  text-align: center;
+  padding: 20px 12px; background: rgba(255,255,255,0.06);
   border-radius: 10px;
 }
 .hero-stat-num {
@@ -398,7 +398,7 @@ footer .footer-local {
   .problem-grid { grid-template-columns: 1fr 1fr; }
   section { padding: 60px 0; }
   .hero { padding: 110px 0 50px; }
-  .hero-stat-row { gap: 12px; }
+  .hero-stat-row { gap: 10px; }
   .blog-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
@@ -440,7 +440,7 @@ footer .footer-local {
         <p class="hero-sub">30 minutes. No cost. Walk away with a clear plan either way.</p>
       </div>
       <div class="hero-right">
-        <h3>The gap most local businesses&nbsp;don't&nbsp;see</h3>
+        <h3>The gap most local businesses don't see</h3>
         <div class="hero-stat-row">
           <div class="hero-stat">
             <div class="hero-stat-num">87%</div>
@@ -895,7 +895,7 @@ window.addEventListener('popstate', () => {
   else showMain();
 });
 // Phone number rendered via JS to prevent bot scraping
-(function(){var p=['(','7','8','1',')',' ','2','6','4','-','8','0','2','6'];var e=document.getElementById('cNum');if(e){var a=document.createElement('a');a.href='tel:'+p.filter(function(c){return/\d/.test(c)}).join('');a.textContent=p.join('');a.style.color='var(--accent)';a.style.fontWeight='600';e.appendChild(a)}})();
+(function(){var d=[3,0,1],s='-',d2=[4,3,7],d3=[6,3,4,3];var e=document.getElementById('cNum');if(e){var n='('+d.join('')+') '+d2.join('')+s+d3.join('');var r=d.join('')+d2.join('')+d3.join('');var a=document.createElement('a');a.href='te'+'l:'+r;a.textContent=n;a.style.color='var(--accent)';a.style.fontWeight='600';e.appendChild(a)}})();
 </script>
 </body>
 </html>
