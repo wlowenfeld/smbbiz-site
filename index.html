@@ -520,7 +520,7 @@ footer .footer-local {
     <div class="hero-content" style="position:relative;">
       <div class="hero-badge">
         <span class="dot"></span>
-        Duxbury, MA — Serving the South Shore &amp; Greater Boston
+        Based in Duxbury, MA
       </div>
       <h1>Systems that <span class="gradient-text">run themselves.</span></h1>
       <p class="hero-sub">AI-powered automations for local businesses. Reviews, leads, retention, CRM — built by your neighbor, not a faceless agency.</p>
@@ -1254,18 +1254,24 @@ window.addEventListener('popstate', () => {
   }
 })();
 
-// Hide mobile CTA bar when contact section is visible
+// Hide mobile CTA bar when hero or contact section is visible
 (function(){
   var bar = document.querySelector('.mobile-cta-bar');
   if(bar && 'IntersectionObserver' in window){
+    var heroVisible = true, contactVisible = false;
+    function updateBar(){
+      var hide = heroVisible || contactVisible;
+      bar.style.transition = 'opacity 0.3s';
+      bar.style.opacity = hide ? '0' : '1';
+      bar.style.pointerEvents = hide ? 'none' : 'auto';
+    }
+    var hero = document.querySelector('.hero');
+    if(hero){
+      new IntersectionObserver(function(e){ heroVisible = e[0].isIntersecting; updateBar(); }, {threshold: 0.15}).observe(hero);
+    }
     var contact = document.getElementById('contact');
     if(contact){
-      var obs = new IntersectionObserver(function(entries){
-        bar.style.transition = 'opacity 0.3s';
-        bar.style.opacity = entries[0].isIntersecting ? '0' : '1';
-        bar.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
-      }, {threshold: 0.2});
-      obs.observe(contact);
+      new IntersectionObserver(function(e){ contactVisible = e[0].isIntersecting; updateBar(); }, {threshold: 0.2}).observe(contact);
     }
   }
 })();
