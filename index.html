@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Local AI Guy | Duxbury, MA | South Shore</title>
 <meta name="description" content="Custom AI-powered automations for South Shore businesses. CRM, reviews, lead follow-up, and retention — built by a Duxbury local who knows your market.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230A0A0F'/><text x='16' y='23' text-anchor='middle' font-size='16' font-family='Georgia,serif' font-weight='bold'><tspan fill='%23FF6B35'>A</tspan><tspan fill='%237B61FF'>I</tspan></text></svg>">
+<meta property="og:title" content="Your Local AI Guy | AI Automation for South Shore Businesses">
+<meta property="og:description" content="Custom AI-powered automations for South Shore businesses. Reviews, leads, retention, CRM — built by a Duxbury local.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.yourlocalaiguy.io/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Your Local AI Guy | AI Automation for South Shore Businesses">
+<meta name="twitter:description" content="Custom AI-powered automations for South Shore businesses. Reviews, leads, retention, CRM — built by a Duxbury local.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&display=swap" rel="stylesheet">
 <style>
@@ -431,7 +439,55 @@ footer .footer-local {
   .form-row { grid-template-columns: 1fr; }
   .marquee-num { font-size: 36px; }
   section, .illustration-section, .bento-section, .timeline-section, .pricing-section, .faq-section, .blog-section, .contact-section { padding: 80px 0; }
+  body { padding-bottom: 80px; }
+  .nav-brand { font-size: 17px !important; }
+  .hero { padding: 100px 0 60px; }
+  .hero h1 { font-size: 44px; }
+  .hero-sub { font-size: 18px; }
+  .bento-card h3 { font-size: 20px; }
+  .bento-card p { font-size: 16px; }
+  .about-grid p { font-size: 17px; }
+  .pricing-section h2 { font-size: 36px; }
+  .pricing-pill { padding: 12px 20px; font-size: 15px; }
 }
+
+/* MOBILE STICKY CTA */
+.mobile-cta-bar {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 99;
+  padding: 12px 20px; background: rgba(10,10,15,0.95); backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+}
+.mobile-cta-bar a {
+  display: block; width: 100%; text-align: center; padding: 16px;
+  border-radius: 100px; background: var(--gradient-hero); color: #fff;
+  font-size: 16px; font-weight: 600; font-family: var(--sans);
+  box-shadow: 0 4px 30px var(--accent-glow); text-decoration: none;
+}
+@media (max-width: 768px) {
+  .mobile-cta-bar { display: block; }
+}
+
+/* FORM SUCCESS */
+.form-success {
+  display: none; text-align: center; padding: 48px 20px;
+}
+.form-success.show { display: block; }
+.form-success .check-icon {
+  width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 20px;
+  background: rgba(0,212,170,0.12); border: 2px solid var(--accent3);
+  display: flex; align-items: center; justify-content: center; font-size: 28px;
+}
+.form-success h3 {
+  font-family: var(--serif); font-size: 28px; color: var(--text-bright);
+  margin-bottom: 12px; letter-spacing: -0.5px;
+}
+.form-success p { color: var(--text-dim); font-size: 17px; line-height: 1.7; }
+
+/* TAP-TO-TEXT (mobile) */
+.phone-link {
+  color: var(--accent); font-weight: 600; text-decoration: none; cursor: pointer;
+}
+.phone-link:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
@@ -439,13 +495,13 @@ footer .footer-local {
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#" onclick="showMain(); return false;" class="nav-brand" style="text-decoration:none;"><span>your local ai guy</span></a>
+    <a href="#" onclick="showMain(); return false;" class="nav-brand" style="text-decoration:none;"><span>Your Local AI Guy</span></a>
     <button class="mobile-menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
     <div class="nav-links">
-      <a href="#services" onclick="showMain(); return false;">Services</a>
-      <a href="#about" onclick="showMain(); return false;">About</a>
-      <a href="#blog" onclick="showMain(); return false;">Blog</a>
-      <a href="#contact" class="nav-cta" onclick="showMain(); return false;">Free Audit</a>
+      <a href="#services" onclick="history.pushState(null,'','#services'); showMain(); return false;">Services</a>
+      <a href="#about" onclick="history.pushState(null,'','#about'); showMain(); return false;">About</a>
+      <a href="#blog" onclick="history.pushState(null,'','#blog'); showMain(); return false;">Blog</a>
+      <a href="#contact" class="nav-cta" onclick="history.pushState(null,'','#contact'); showMain(); return false;">Free Audit</a>
     </div>
   </div>
 </nav>
@@ -510,7 +566,7 @@ footer .footer-local {
           </circle>
           <!-- Progress bar on chest -->
           <rect x="50" y="158" width="80" height="6" rx="3" fill="rgba(255,255,255,0.05)"/>
-          <rect x="50" y="158" width="20" height="6" rx="3" fill="url(#g1)">
+          <rect x="50" y="158" width="20" height="6" rx="3" fill="url(#heroG)">
             <animate attributeName="width" values="0;80;0" dur="3s" repeatCount="indefinite"/>
           </rect>
           <!-- Arms -->
@@ -520,7 +576,7 @@ footer .footer-local {
           <circle cx="162" cy="178" r="8" fill="rgba(0,212,170,0.1)" stroke="rgba(0,212,170,0.35)" stroke-width="1.5"/>
           <!-- Neck -->
           <rect x="75" y="100" width="30" height="12" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
-          <defs><linearGradient id="g1h" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#FF3CAC"/></linearGradient></defs>
+          <defs><linearGradient id="heroG" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FF6B35"/><stop offset="100%" stop-color="#FF3CAC"/></linearGradient></defs>
         </svg>
       </div>
     </div>
@@ -837,8 +893,8 @@ footer .footer-local {
 <!-- PRICING -->
 <section class="pricing-section">
   <div class="container">
-    <h2>Our success is aligned.</h2>
-    <p class="pricing-quote">"If it's not saving you time or making you money, you don't pay."</p>
+    <h2>If I don't deliver, you don't pay.</h2>
+    <p class="pricing-quote">"Your success is my success. Simple as that."</p>
     <div class="pricing-pills">
       <div class="pricing-pill">No long-term contracts</div>
       <div class="pricing-pill">Setup fee + monthly retainer</div>
@@ -846,6 +902,7 @@ footer .footer-local {
       <div class="pricing-pill">Month-to-month after build</div>
       <div class="pricing-pill">No hard feelings if it's not working</div>
     </div>
+    <p style="font-size:15px; color:var(--accent); font-weight:600; margin-bottom:32px; margin-top:8px;">Currently accepting 3 new clients this quarter.</p>
     <a href="#contact" class="btn-big btn-primary-big">Let's Talk Numbers &rarr;</a>
   </div>
 </section>
@@ -892,31 +949,31 @@ footer .footer-local {
     </div>
     <div class="blog-grid">
       <div class="blog-card" onclick="showPost('post1')">
-        <div class="blog-date">March 2, 2026</div>
+        <div class="blog-date">January 15, 2026</div>
         <h3>Why 87% of Local Businesses Are Ignoring Their Most Powerful Marketing Channel</h3>
         <p>Your Google reviews are doing more selling than your website. Most businesses just aren't listening.</p>
         <div class="blog-tag">Reviews</div>
       </div>
       <div class="blog-card" onclick="showPost('post2')">
-        <div class="blog-date">March 3, 2026</div>
+        <div class="blog-date">January 28, 2026</div>
         <h3>The Follow-Up Problem: Why Your Leads Go Cold</h3>
         <p>You're generating leads. You're just not converting them. Here's where the gap is.</p>
         <div class="blog-tag">Lead Conversion</div>
       </div>
       <div class="blog-card" onclick="showPost('post3')">
-        <div class="blog-date">March 4, 2026</div>
+        <div class="blog-date">February 10, 2026</div>
         <h3>What a Weekly Intelligence Digest Looks Like for a Local Business</h3>
         <p>A Monday morning briefing that tells you what happened, what's trending, and what to do about it.</p>
         <div class="blog-tag">Intelligence</div>
       </div>
       <div class="blog-card" onclick="showPost('post4')">
-        <div class="blog-date">March 5, 2026</div>
+        <div class="blog-date">February 24, 2026</div>
         <h3>5 Signs Your Business Is Ready for Automation (And 3 Signs It's Not)</h3>
         <p>Automation isn't for everyone. Here's how to know if the timing is right.</p>
         <div class="blog-tag">Automation</div>
       </div>
       <div class="blog-card" onclick="showPost('post5')">
-        <div class="blog-date">March 6, 2026</div>
+        <div class="blog-date">March 3, 2026</div>
         <h3>The Real Cost of Not Responding to a Negative Google Review</h3>
         <p>It's not just about feelings. There's a dollar amount attached to every unanswered review.</p>
         <div class="blog-tag">Reviews</div>
@@ -962,15 +1019,20 @@ footer .footer-local {
         <textarea id="pain" name="pain" placeholder="Tell me about the tasks you wish you could hand off..."></textarea>
       </div>
       <button type="submit" class="submit-btn">Request My Free Audit &rarr;</button>
-      <p style="text-align:center; margin-top:14px; font-size:13px; color:var(--text-dim);">Or just text me at <span id="cNum"></span> — I'll get back to you the&nbsp;same&nbsp;day.</p>
+      <p style="text-align:center; margin-top:14px; font-size:13px; color:var(--text-dim);">Or just text me at <span id="cNum" style="color:var(--accent);font-weight:600;"></span> — I'll get back to you the&nbsp;same&nbsp;day.</p>
     </form>
+    <div class="form-success" id="formSuccess">
+      <div class="check-icon">&#10003;</div>
+      <h3>You're on my list.</h3>
+      <p>I'll review your info and get back to you within 24 hours — usually same day. Talk soon.</p>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
     <p class="footer-local">Proudly serving Duxbury, Marshfield, Plymouth, Hingham, Scituate &amp; the South Shore</p>
-    <p>&copy; 2026 All rights reserved.</p>
+    <p>&copy; 2026 <a href="https://brookfordllc.com" target="_blank" rel="noopener" style="color:var(--text-dim);text-decoration:none;border-bottom:1px solid var(--border);">Brook Ford LLC</a>. All rights reserved.</p>
   </div>
 </footer>
 
@@ -979,7 +1041,7 @@ footer .footer-local {
 <!-- BLOG POST VIEWS -->
 <div class="blog-post-view" id="post1">
   <div class="blog-back" onclick="showMain()">&#8592; Back to Home</div>
-  <div class="post-date">March 2, 2026</div>
+  <div class="post-date">January 15, 2026</div>
   <h1>Why 87% of Local Businesses Are Ignoring Their Most Powerful Marketing Channel</h1>
   <div class="post-body">
     <p>Think about the last time you picked a restaurant, a plumber, or a dentist. You probably did what everyone does: you Googled it and read the reviews. If the reviews were bad — or worse, if the business never responded to a complaint — you moved on. Took about three seconds.</p>
@@ -1002,7 +1064,7 @@ footer .footer-local {
 
 <div class="blog-post-view" id="post2">
   <div class="blog-back" onclick="showMain()">&#8592; Back to Home</div>
-  <div class="post-date">March 3, 2026</div>
+  <div class="post-date">January 28, 2026</div>
   <h1>The Follow-Up Problem: Why Your Leads Go Cold</h1>
   <div class="post-body">
     <p>You're spending money on ads. Your website has a contact form. Leads are coming in. And then... nothing happens.</p>
@@ -1021,7 +1083,7 @@ footer .footer-local {
 
 <div class="blog-post-view" id="post3">
   <div class="blog-back" onclick="showMain()">&#8592; Back to Home</div>
-  <div class="post-date">March 4, 2026</div>
+  <div class="post-date">February 10, 2026</div>
   <h1>What a Weekly Intelligence Digest Looks Like for a Local Business</h1>
   <div class="post-body">
     <p>Most business owners have data everywhere and insights nowhere. A weekly digest solves this. Every Monday, one page: what happened, what's trending, what to do about it.</p>
@@ -1041,7 +1103,7 @@ footer .footer-local {
 
 <div class="blog-post-view" id="post4">
   <div class="blog-back" onclick="showMain()">&#8592; Back to Home</div>
-  <div class="post-date">March 5, 2026</div>
+  <div class="post-date">February 24, 2026</div>
   <h1>5 Signs Your Business Is Ready for Automation (And 3 Signs It's Not)</h1>
   <div class="post-body">
     <p>Automation isn't a magic wand. But when the timing is right, it's the highest-leverage investment a small business can make.</p>
@@ -1064,7 +1126,7 @@ footer .footer-local {
 
 <div class="blog-post-view" id="post5">
   <div class="blog-back" onclick="showMain()">&#8592; Back to Home</div>
-  <div class="post-date">March 6, 2026</div>
+  <div class="post-date">March 3, 2026</div>
   <h1>The Real Cost of Not Responding to a Negative Google Review</h1>
   <div class="post-body">
     <p>A negative review sitting unanswered isn't just a bad look. It's a compounding cost.</p>
@@ -1104,6 +1166,34 @@ footer .footer-local {
   </div>
 </div>
 
+<!-- MOBILE STICKY CTA -->
+<div class="mobile-cta-bar">
+  <a href="#contact">Book a Free Audit &rarr;</a>
+</div>
+
+<!-- LOCAL BUSINESS SCHEMA -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Your Local AI Guy",
+  "description": "Custom AI-powered automations for South Shore businesses. Reviews, leads, retention, CRM.",
+  "url": "https://www.yourlocalaiguy.io",
+  "areaServed": ["Duxbury", "Marshfield", "Plymouth", "Hingham", "Scituate", "South Shore MA"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Duxbury",
+    "addressRegion": "MA",
+    "addressCountry": "US"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Wes"
+  },
+  "serviceType": ["AI Automation", "CRM Automation", "Review Management", "Lead Follow-Up", "Customer Retention"]
+}
+</script>
+
 <script>
 function showPost(id) {
   document.getElementById('mainContent').style.display = 'none';
@@ -1133,7 +1223,52 @@ window.addEventListener('popstate', () => {
   else showMain();
 });
 // Phone number - bot protected
-(function(){var e=document.getElementById('cNum');if(e){var s=document.createElement('span');s.style.color='var(--accent)';s.style.fontWeight='600';s.innerHTML='three-zero-one \u00b7 437 \u00b7 6343';e.appendChild(s)}})();
+(function(){var e=document.getElementById('cNum');if(e){e.innerHTML='three-zero-one \u00b7 437 \u00b7 6343';}})();
+
+// Form submission handler
+(function(){
+  var form = document.querySelector('.contact-form');
+  if(form) {
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var btn = form.querySelector('.submit-btn');
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(r){
+        if(r.ok){
+          form.style.display = 'none';
+          document.getElementById('formSuccess').classList.add('show');
+        } else {
+          btn.textContent = 'Something went wrong — try again';
+          btn.disabled = false;
+        }
+      }).catch(function(){
+        btn.textContent = 'Something went wrong — try again';
+        btn.disabled = false;
+      });
+    });
+  }
+})();
+
+// Hide mobile CTA bar when contact section is visible
+(function(){
+  var bar = document.querySelector('.mobile-cta-bar');
+  if(bar && 'IntersectionObserver' in window){
+    var contact = document.getElementById('contact');
+    if(contact){
+      var obs = new IntersectionObserver(function(entries){
+        bar.style.transition = 'opacity 0.3s';
+        bar.style.opacity = entries[0].isIntersecting ? '0' : '1';
+        bar.style.pointerEvents = entries[0].isIntersecting ? 'none' : 'auto';
+      }, {threshold: 0.2});
+      obs.observe(contact);
+    }
+  }
+})();
 </script>
 </body>
 </html>
